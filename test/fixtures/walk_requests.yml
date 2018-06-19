@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  dog: one
+  date: 2018-06-19
+  walk_start_time: 2018-06-19 17:47:36
+  walk_completed_time: 2018-06-19 17:47:36
+
+two:
+  user: two
+  dog: two
+  date: 2018-06-19
+  walk_start_time: 2018-06-19 17:47:36
+  walk_completed_time: 2018-06-19 17:47:36
