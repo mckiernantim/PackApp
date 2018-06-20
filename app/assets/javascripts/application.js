@@ -12,4 +12,7 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery/dist/jquery
 //= require_tree .
+//= require wow
+//= require jquery.easing
