@@ -10,48 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_214736) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "dogs", force: :cascade do |t|
-    t.string "name"
-    t.integer "weight"
-    t.date "date_of_birth"
-    t.string "breed"
-    t.string "temperment"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_dogs_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "f_name"
-    t.string "l_name"
-    t.string "email"
-    t.string "street_adress"
-    t.integer "zipcode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "walk_requests", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "dog_id"
-    t.date "date"
-    t.time "walk_start_time"
-    t.time "walk_completed_time"
-    t.integer "walker_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["dog_id"], name: "index_walk_requests_on_dog_id"
-    t.index ["user_id"], name: "index_walk_requests_on_user_id"
-  end
-
-  add_foreign_key "dogs", "users"
-  add_foreign_key "walk_requests", "dogs"
-  add_foreign_key "walk_requests", "users"
-  add_foreign_key "walk_requests", "users", column: "walker_id"
 end
