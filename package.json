@@ -1,5 +1,13 @@
 {
   "name": "pack",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "4.1.1",
+    "jquery": "^3.3.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/S-MORA/PackApp.git",
+  "author": "Sharon Morato <sharonmorato1@gmail.com>",
+  "license": "MIT"
 }
