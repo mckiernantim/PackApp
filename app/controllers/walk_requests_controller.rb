@@ -1,0 +1,2 @@
+class WalkRequestsController < ApplicationController
+end
