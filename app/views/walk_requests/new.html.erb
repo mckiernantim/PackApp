@@ -1,0 +1,35 @@
+<div class="container-fluid bg-form py-5">
+  <div class="row">
+
+    <div class="col-6 text-center">
+       <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
+       <div class="m-3 mb-5">
+        Request a walk from you're neighbors!
+        <br>
+        <br>
+        Remember, you must walk other's dogs to earn credit for your walks
+       </div>
+    </div>
+
+    <div class="col-6 form">
+     <fieldset>
+       <%= form_for @walk_request do |w| %>
+         <div class="field">
+           <%= w.label :walk_start_time %>
+            <%= w.time_field :walk_start_time %>
+         </div>
+
+         <div class="field">
+           <%= w.label :date %>
+          <%= w.date_field :date %>
+         </div>
+
+         <div class="actions">
+           <%= w.submit "Request a Walk", :class => "action-button"%>
+         </div>
+       <% end %>
+     </fieldset>
+    </div>
+
+  </div>
+</div>
