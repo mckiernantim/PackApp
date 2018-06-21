@@ -1,55 +1,36 @@
-<div class="container-fluid bg-signup py-5">
-  <div class="row">
-
-    <div class="col-6 text-center">
-       <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
-       <div class="m-3 mb-5">
-        When you become apart of the pack, <br> you'll never have to for a walk again.
-        <br>
-        <br>
-        Give a walk and get a walk!
-       </div>
-    </div>
 
 
-    <div class="col-6 form">
-      <fieldset>
-        <h2 class="fs-title">Sign Up </h2>
-         <h3 class="fs-subtitle">Join the pack</h3>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+      <fieldset class=" auth-box" id="signup-box">
+        <a class="fs-title user-auth-toggle">Login</a>
+        <a class="active fs-title user-auth-toggle">Sign Up</a>
+        <h3 class="fs-subtitle">Join the Pack</h3>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-        <div class="field">
-          <%= f.text_field :first_name, autofocus: true, autocomplete: "off", placeholder: "first name" %>
-        </div>
+          <div class="field">
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "off", placeholder: "first name" %>
+          </div>
 
-        <div class="field">
-          <%= f.text_field :last_name, autocomplete: "off", placeholder: "last name" %>
-        </div>
+          <div class="field">
+            <%= f.text_field :last_name, autocomplete: "off", placeholder: "last name" %>
+          </div>
 
-        <div class="field">
-          <%= f.email_field :email, autocomplete: "email", placeholder: "email" %>
-        </div>
+          <div class="field">
+            <%= f.email_field :email, autocomplete: "email", placeholder: "email" %>
+          </div>
 
-        <div class="field">
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> character minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
-        </div>
+          <div class="field">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> character minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
+          </div>
 
-        <div class="field">
-          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password" %>
-        </div>
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "confirm password" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "Sign up", :class => "action-button"%>
-        </div>
-      <% end %>
-
-      <%= render "devise/shared/links" %>
+          <div class="actions">
+            <%= f.submit "Sign up", :class => "action-button"%>
+          </div>
+        <% end %>
      </fieldset>
-    </div>
-
-  </div>
-</div>

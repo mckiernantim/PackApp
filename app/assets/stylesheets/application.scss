@@ -252,6 +252,17 @@ footer {
     margin-bottom: 20px;
 }
 
+.hide {
+  display: none
+}
+.active {
+  font-size: 18px;
+  color:yellow
+}
+
+.login-box-link:hover {
+  color: red
+}
 //SIGN UP FORM DONE
 
 @media(min-width:768px) {
