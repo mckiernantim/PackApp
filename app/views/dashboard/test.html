@@ -1,87 +1,167 @@
 <div class="row mt-3">
   <div class="col-lg-12">
     <div class="row">
-      <div class="col-lg-5 mr-3">
+      <div class="col-lg-3 mr-3">
         <div class="col-lg-12 col-sm-12 mr-3">
 
           <table class="table table-dark">
             <div class="row">
               <div class="col-lg-12 col-sm-12">
-                <h3>'s Scheduled Walks! </h3>
+
+                <h3>
+                  <%=@user.dogs.first.name%>'s Scheduled Walks! </h3>
+
+
                 <thead>
                   <tr>
 
                     <th scope="col">Date</th>
+
                     <th scope="col">Start Time</th>
                     <th scope="col">End Time</th>
                     <th scope="col">Walker</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
 
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>blaaa</td>
-                    <td>blaablaa</td>
-                  </tr>
-                  <tr>
+                  <% @dog.walk_requests.length.times do |walk| %>
+                    <tr>
 
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
+                      <td>
+                        <%=@dog.walk_requests.order(:date)[walk].date%>
+                      </td>
 
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                      <td>start time</td>
+                      <td>end time</td>
+                      <td></td>
+                    </tr>
+                    <%end%>
                 </tbody>
+              </div>
+            </div>
           </table>
-          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mr-3">
+
+        <% if @user_walks.length < 1 %>
+
+          <div class="col-lg-12 col-sm-12">
+            <div class="row">
+              <h5>You have no walks shceduled. Get on it!</h5>
+            </div>
+            <% else %>
+
+              <table class="table table-dark">
+
+                <div class="col-lg-12 col-sm-12">
+
+                  <h3> Here's your walks,
+                    <%=@user.first_name%>
+                  </h3>
+
+
+                  <thead>
+                    <tr>
+
+                      <th scope="col">Date</th>
+
+                      <th scope="col">Dog</th>
+                      <th scope="col">Owner</th>
+                      <th scope="col">Location</th>
+                      <th scope='col'>Start</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+
+                    <%@user_walks.each do |walk| %>
+
+                      <tr class="available_walk">
+
+                        <td>
+                          <%=walk.date%>
+                        </td>
+                        <td>
+                          <%=walk.dog.name%>
+                        </td>
+
+
+                        <td>
+                          <%=walk.user.first_name%>
+                            <%=walk.user.last_name%>
+                        </td>
+                        <td>
+                          <%=walk.user.address_line_one%>
+                            <%=walk.user.postal_code%>
+                        </td>
+                        <td>
+                          <%=walk.walk_start_time%>
+                        </td>
+                        <td>
+                          <form action="update">
+                            <submit type="button" class="btn btn-success book_dog_walk">Book!</submit>
+                          </form>
+                        </td>
+                      </tr>
+                      <%end%>
+                        <%end%>
+
+
+
+                  </tbody>
+              </table>
+              </div>
           </div>
 
-          <div class="col-5 mr-3">
+          <div class="col-lg-3 mr-3">
             <div class="col-lg-12 col-sm-12 mr-3">
 
               <table class="table table-dark">
 
                 <div class="col-lg-12 col-sm-12">
-                  <h3>available walks</h3>
+                  <h3>Hey
+                    <%=@user.first_name%>, how about a walk?</h3>
                   <thead>
                     <tr>
 
-                      <th scope="col">Date</th>
-                      <th scope="col">Start Time</th>
-                      <th scope="col">End Time</th>
-                      <th scope="col">Walker</th>
+                      <th scope="col">Dog</th>
+                      <th scope="col">Owner</th>
+                      <th scope="col">Start</th>
+                      <th scope="col">End</th>
+                      <th scope='col'>Location</th>
+
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <% @available_walks.each do |walk| %>
 
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>blaaa</td>
-                      <td>blaablaa</td>
-                    </tr>
-                    <tr>
 
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
 
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
+                      <tr>
+
+                        <td>
+                          <%=walk.dog.name%>
+                        </td>
+
+
+                        <td>
+                          <%=walk.user.first_name%>
+                            <%=walk.user.last_name%>
+                        </td>
+                        <td>blaaa</td>
+                        <td>blaablaa</td>
+                        <td>
+                          <button type="button" class="btn btn-success book_dog_walk">Book!</button>
+                        </td>
+                      </tr>
+                      <%end%>
+
                   </tbody>
               </table>
               </div>
             </div>
+
 
 
             <!-- Instance variable here -->
@@ -90,13 +170,13 @@
             </h3>
 
           </div>
-        </div>
-
-        <!-- Instance variable here -->
-        <h3>
-
-        </h3>
-
       </div>
+
+      <!-- Instance variable here -->
+      <h3>
+
+      </h3>
+
     </div>
   </div>
+</div>
