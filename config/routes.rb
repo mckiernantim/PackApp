@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root to: "landing#index"
 
-get '/pre_dashboard', to: 'pre_dashboard#index'
+  get '/pre_dashboard', to: 'pre_dashboard#index'
+
+  get '/join', to: 'join#index'
 
 
 end
