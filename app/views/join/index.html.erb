@@ -1,4 +1,4 @@
-<div class="container-fluid bg-signup py-5">
+<div class="container-fluid bg-form py-5">
   <div class="row">
 
     <div class="col-6 text-center">
@@ -10,12 +10,11 @@
         Give a walk and get a walk!
        </div>
     </div>
+
     <div class="col-6 form">
       <%= render template: 'devise/registrations/new', locals: {resource: User.new, resource_name: 'user'} %>
       <%= render template: 'devise/sessions/new', locals: {resource: User.new, resource_name: 'user'} %>
     </div>
-
-
 
   </div>
 </div>
