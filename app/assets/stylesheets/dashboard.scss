@@ -1,3 +1,45 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+   background: url('background-7.jpg') no-repeat center center fixed;
+   background-size: cover;
+}
+
+
+.box {
+  border: black solid .5px;
+  box-shadow: 1px 1px 1px grey;
+  margin-top: 20px;
+  background-color: white;
+  color: black;
+}
+
+.user-image {
+  border-right: solid black;
+}
+
+.walk-request-button {
+}
+
+/* Shrink effect on walk request button */
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.data-tables {
+  padding-top: 300px;
+}
