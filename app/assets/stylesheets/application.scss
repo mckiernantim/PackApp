@@ -31,9 +31,9 @@ html, body {
 }
 
 body {
-  font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #282828;
-  color: #d3d3d3;
+  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  color: black;
+  padding-top: 70px;
 }
 
 hr {
@@ -49,7 +49,7 @@ hr.light {
 }
 
 a {
-  color: #9c27b0;
+  color: $light-blue;
   transition: all .35s;
 }
 
@@ -59,7 +59,7 @@ a:hover, a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
 }
 
 p {
@@ -84,6 +84,11 @@ p {
 }
 
 .bg-how {
+  background: url('background-3.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.bg-signup {
   background: url('background-3.jpg') no-repeat center center fixed;
   background-size: cover;
 }
@@ -128,13 +133,13 @@ footer {
 
 .navbar-expand-lg {
   border-color: rgba(35, 35, 35, .05);
-  font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
   background-color: #222;
   transition: all .4s;
 }
 
 .navbar-header>.navbar-brand {
-  font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
   color: black;
   padding: 15px;
   transition: padding .2s ease-in;
@@ -171,6 +176,94 @@ footer {
 .navbar-expand-lg .nav>li.active>a:hover, .navbar-expand-lg .nav>li.active>a:focus:hover {
   background-color: transparent;
 }
+
+// SIGN UP FORM
+
+.form {
+    text-align: center;
+    position: relative;
+}
+
+.form fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+}
+
+
+/*inputs*/
+.form input, .form textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: $dark-blue;
+    font-size: 13px;
+}
+
+.form input:focus, .form textarea:focus {
+    box-shadow: none !important;
+    border: 1px solid $orangish;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+.form .action-button {
+    width: 100px;
+    background: $dark-blue;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+.form .action-button:hover, .form .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px $dark-blue;
+}
+
+
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.hide {
+  display: none
+}
+.active {
+  font-size: 18px;
+  color: $light-blue !important
+}
+
+.login-box-link:hover {
+  color: red
+}
+//SIGN UP FORM DONE
 
 @media(min-width:768px) {
   .navbar-expand-lg {
@@ -224,10 +317,7 @@ header {
   width: 100%;
   background-image: url('landing-page-background.jpg');
   background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
   background-size: cover;
-  -o-background-size: cover;
 }
 
 header .header-content {
@@ -254,6 +344,12 @@ footer {
   background-color: #2d2d2d;
 }
 
+
+.logo-md {
+  width: 15vw;
+}
+
+
 @media(min-width:768px) {
   .icon-lg {
     font-size: 80px;
@@ -265,8 +361,6 @@ footer {
     position: absolute;
     top: 50%;
     padding: 0 50px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   header .header-content .inner {
@@ -290,17 +384,6 @@ footer {
 }
 
 .form-control {
-  display: block;
-  width: 100%;
-  height: 35px;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #eee;
-  background-color: #36333d;
-  background-image: none;
-  border: 1px solid #36333d;
-  border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
@@ -324,6 +407,8 @@ textarea {
   max-width: 400px;
 }
 
+
+
 @media(min-width:992px) {
   .feature {
     margin: 20px auto 0;
@@ -343,8 +428,6 @@ textarea {
   border-color: #fff;
   color: #222;
   background-color: #fff;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
   transition: all .35s;
 }
 

@@ -9,8 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <nav id="topNav" class="navbar navbar-expand-lg fixed-top">
+  <body class="<%= controller_name %> <%= action_name %>">
+<nav id="topNav" class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#bs-navbar">
@@ -33,18 +33,17 @@
       </ul>
       <ul class="nav navbar-nav ml-auto">
         <li>
-          <a class="">Log In</a>
+          <%= link_to "Join the Pack", join_path %>
         </li>
-        <li>
-          <a class="">Sign Up</a>
-        </li>
+
       </ul>
     </div>
   </div>
 </nav>
-    <%= yield %>
 
-    <footer id="footer">
+  <%= yield %>
+
+  <footer id="footer">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-6 col-sm-3 column">
