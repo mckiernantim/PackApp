@@ -12,6 +12,7 @@ namespace :dummy do
             )
         end
     end
+
         # run rake dummy:create_dogs  
         # this will only populate the NAME and ID 
         
@@ -52,4 +53,5 @@ namespace :dummy do
         WalkRequest.destroy_all
     end
 end
+
 

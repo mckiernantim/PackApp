@@ -1,16 +1,18 @@
+
  Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+       registrations: 'users/registrations'
+     }
+  resources :walk_requests
 
-  root to: "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-resources :dog
-resources :walk_request
-resources :user
-resources :dashboard
 
+  root to: "landing#index"
+
+  get '/pre_dashboard', to: 'pre_dashboard#index'
+
+  get '/join', to: 'join#index'
 
 
 end

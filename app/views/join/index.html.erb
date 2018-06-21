@@ -1,0 +1,20 @@
+<div class="container-fluid bg-form py-5">
+  <div class="row">
+
+    <div class="col-6 text-center">
+       <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
+       <div class="m-3 mb-5">
+        When you become apart of the pack, <br> you'll never have to for a walk again.
+        <br>
+        <br>
+        Give a walk and get a walk!
+       </div>
+    </div>
+
+    <div class="col-6 form">
+      <%= render template: 'devise/registrations/new', locals: {resource: User.new, resource_name: 'user'} %>
+      <%= render template: 'devise/sessions/new', locals: {resource: User.new, resource_name: 'user'} %>
+    </div>
+
+  </div>
+</div>
