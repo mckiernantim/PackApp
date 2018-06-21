@@ -1,0 +1,2 @@
+class PreDashboardController < ApplicationController
+end
