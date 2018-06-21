@@ -11,15 +11,14 @@ namespace :dummy do
             )
         end
     end
+  end
 
-    task create_dogs: :enviroment do 
+    task create_dogs: :enviroment do
         10.times do |i|
             Dog.create(
-                nameL Faker::Name
-                
+                name: Faker::Name
+
             )
 
     end
 end
-
-
