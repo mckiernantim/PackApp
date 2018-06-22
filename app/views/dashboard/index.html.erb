@@ -37,7 +37,8 @@
               <div class="col-lg-12 col-sm-12">
 
                 <h3>
-                  <%=@user.dogs.first.name%>'s Scheduled Walks! </h3>
+                  <%=@user.dogs.first.name%>'s Scheduled Walks! 
+                  </h3>
 
 
                 <thead>
@@ -185,11 +186,7 @@
                   </thead>
                   <tbody>
                     <% @available_walks.each do |walk| %>
-
-
-
-
-                      <tr>
+                    <tr>
 
                         <td>
                           <%=walk.dog.name%>
