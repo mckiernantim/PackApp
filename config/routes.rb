@@ -14,5 +14,6 @@
 
   get '/join', to: 'join#index'
 
+  get '/confirm', to: 'walk_confirmation#index'
 
 end

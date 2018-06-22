@@ -1,0 +1,2 @@
+module WalkConfirmationHelper
+end
