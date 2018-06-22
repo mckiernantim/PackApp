@@ -8,10 +8,4 @@ class DashboardController < ApplicationController
             # will need to be changed once active record is working
             @user_walks = WalkRequest.where(walker_id: @user.id)
     end
-
-    
-
-
-
-
 end
