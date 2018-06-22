@@ -11,9 +11,11 @@
 .box {
   border: black solid .5px;
   box-shadow: 1px 1px 1px grey;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: white;
   color: black;
+  height: 150px;
+  border-radius: 3px
 }
 
 .user-image {

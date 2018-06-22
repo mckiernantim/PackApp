@@ -77,10 +77,14 @@ p {
   line-height: 18px;
 }
 
+.bg-primary {
+  background: url('background-7.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
 .bg-about {
   background: url('background-2.jpg') no-repeat center center fixed;
   background-size: cover;
-
 }
 
 .bg-how {
@@ -361,6 +365,9 @@ footer {
   width: 15vw;
 }
 
+.logo-sm{
+  width: 2vw;
+}
 
 @media(min-width:768px) {
   .icon-lg {
