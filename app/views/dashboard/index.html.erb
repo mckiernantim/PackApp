@@ -26,7 +26,9 @@
           <div class="col-12">
             <div class="d-flex justify-content-center">Request A Walk</div>
             <div class="walk-request-button hvr-shrink d-flex justify-content-center">
-              <%= link_to image_tag("walk-request-button.png") %>
+              <%= link_to new_walk_request_path do %>
+               <%= image_tag("walk-request-button.png") %>
+              <% end %>
             </div>
           </div>
          </div>
@@ -119,7 +121,7 @@
                         <td>
                           <%=walk.walk_start_time%>
                         </td>
-                       
+
                       </tr>
                 <% end %>
                   </tbody>
@@ -159,8 +161,10 @@
                         <td>blaablaa</td>
                         <td>
                             <%= link_to  walk_request_path(walk) do%>
+
                               <button type="button" class="btn btn-success book_dog_walk">Book!</button> 
                             <%end%>
+
                         </td>
                       </tr>
                     <%end%>
