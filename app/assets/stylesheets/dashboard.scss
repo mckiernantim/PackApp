@@ -9,13 +9,12 @@
 
 
 .box {
-  border: black solid .5px;
-  box-shadow: 1px 1px 1px grey;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
   margin-top: 15px;
-  background-color: white;
+  background: white;
   color: black;
   height: 150px;
-  border-radius: 3px
+  border-radius: 2px
 }
 
 .user-image {
