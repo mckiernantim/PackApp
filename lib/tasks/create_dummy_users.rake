@@ -1,4 +1,8 @@
 namespace :dummy do
+
+       # run rake dummy:alll to populate an entire DB
+    task all: [:create_users, :create_dogs, :create_walk_requests ]
+
     #  run  rake dummy:create_users
     task create_users: :environment do
         10.times do |i|
@@ -11,6 +15,7 @@ namespace :dummy do
                 last_name: Faker::Name.last_name,
                 postal_code: Faker::Address.postcode,
                 address_line_one: Faker::Address.street_address
+
             )
         end
     end
@@ -19,15 +24,17 @@ namespace :dummy do
         # this will only populate the NAME and ID 
         
     task create_dogs: :environment do
-        users= User.all
+        users= User.all,
       
         10.times do |i|
             Dog.create(
                 name: Faker::Dog.name,
-                
-                user_id: User.all[i].id
-                
-)
+                weight: Faker::Dog.size,
+                temperment: "Good Boi",
+                breed: Faker::Dog.breed,
+                user_id: User.all[i].id,
+                date_of_birth: Faker::Dog.age,
+                )
             end
         end
             # run rake dummy:create_walk_requests to populate a table for requests
@@ -40,7 +47,9 @@ namespace :dummy do
                     user_id: User.all[i].id,
                     walker_id: User.all[i+1].id,
                     dog_id: Dog.all[i].id,
-                    date: Faker::Date.forward(14)
+                    date: Faker::Date.forward(14),
+                    walk_start_time: Faker::Time.forward(23, :morning),
+
                         )
         end
     end
