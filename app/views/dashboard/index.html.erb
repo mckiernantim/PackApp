@@ -100,7 +100,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <%@user_walks.each do |walk| %>
+                    <%@user_walks.order(:date).each do |walk| %>
                       <tr class="available_walk">
                         <td>
                           <%=walk.date%>
@@ -119,11 +119,7 @@
                         <td>
                           <%=walk.walk_start_time%>
                         </td>
-                        <td>
-                          <form action="dashboard" method = "update">
-                            <submit type="button" class="btn btn-success book_dog_walk">Book!</submit>
-                          </form>
-                        </td>
+                       
                       </tr>
                 <% end %>
                   </tbody>
@@ -162,7 +158,7 @@
                         <td>blaaa</td>
                         <td>blaablaa</td>
                         <td>
-                            <%= link_to edit_walk_request_path(walk) do%>
+                            <%= link_to  walk_request_path(walk) do%>
                           <button type="button" class="btn btn-success book_dog_walk">Book!</button> 
                           <%end%>
                         </td>
