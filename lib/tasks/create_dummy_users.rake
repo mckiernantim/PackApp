@@ -8,7 +8,9 @@ namespace :dummy do
                 password: password,
                 password_confirmation: password,
                 first_name: Faker::Name.first_name,
-                last_name: Faker::Name.last_name
+                last_name: Faker::Name.last_name,
+                postal_code: Faker::Address.postcode,
+                address_line_one: Faker::Address.street_address
             )
         end
     end
@@ -18,7 +20,7 @@ namespace :dummy do
         
     task create_dogs: :environment do
         users= User.all
-        p users
+      
         10.times do |i|
             Dog.create(
                 name: Faker::Dog.name,
