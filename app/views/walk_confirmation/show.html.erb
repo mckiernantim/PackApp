@@ -1,0 +1,56 @@
+<div class="container-fluid bg-form py-5">
+  <div class="row">
+
+    <div class="col-6 text-center">
+       <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
+       <div class="m-3 mb-5">
+        Here are the details regarding your walk.
+        <br>
+        <br>
+        If you need to a cancel the walk, please be sure to do so via your dashboard.
+       </div>
+    </div>
+
+    <div class="col-6 form">
+     <fieldset>
+        <h2 class="fs-title">Walk Confirmation</h2>
+        <h3 class="fs-subtitle">By Clicking Confirm You Agree to take <span style ="color:#263b77; font-size:18px"><%=@dog.name%> <%=@user.last_name%></span> for a Walk  - this has inline styling! change it later!</h2>
+
+          <div class="text-wrapper">
+            <span class="text-muted">Dog Name: </span> <%=@dog.name%>
+          </div>
+          
+          <div class="text-wrapper">
+            <span class="text-muted">Temperment:</span> <%=@dog.temperment%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Breed </span> <%=@dog.breed%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted"> Weight </span><%=@dog.weight%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Date & Time: </span> <%=@current_walk.date%> at <%=@current_walk.walk_start_time%> - uhh - what?
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted"> <%=@dog.name%>'s Owner </span> <%=@user.last_name%>, <%=@user.first_name%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Human Address: </span> <%=@user.address_line_one%>, <%=@user.postal_code%>
+          </div>
+
+        <div>
+          
+           <%= button_to "Confirm", confirm_walk_request_walk_request_path, class: "action-button"%>
+           
+          
+              
+         
+        </div>
+
+
+     </fieldset>
+
+    </div>
+  </div>
+</div>
