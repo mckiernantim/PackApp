@@ -10,10 +10,7 @@ class DashboardController < ApplicationController
             
     end
 
-    def update
-        @slelected_walk = 
-    end
-
+   
 
 
 
