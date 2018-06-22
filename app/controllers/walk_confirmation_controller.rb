@@ -12,8 +12,8 @@ class WalkConfirmationController < ApplicationController
     wr = WalkRequest.find(params[:id])
     wr.walker_id = @user.id
     wr.save
-    byebug
-      
+
+
     redirect_to dashboard_index_path
   end
 
