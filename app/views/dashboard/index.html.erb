@@ -203,7 +203,9 @@
                         <td>blaaa</td>
                         <td>blaablaa</td>
                         <td>
-                          <button type="button" class="btn btn-success book_dog_walk">Book!</button>
+                            <%= link_to edit_walk_request_path(walk) do%>
+                          <button type="button" class="btn btn-success book_dog_walk">Book!</button> 
+                          <%end%>
                         </td>
                       </tr>
                       <%end%>

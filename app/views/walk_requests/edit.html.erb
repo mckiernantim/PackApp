@@ -1,0 +1,66 @@
+
+    <div class= 'row' style ='margin-top: 20px; margin-left: 20px; margin-right: 20px'>
+        <div class = "col align-self-center">
+            <div class = "row">
+                <div class ="col align-self-start dog_walk_header">
+                    <h3>
+                    <%=@user.first_name%>, meet <%=@dog.name%>!</h3>
+                </div>
+            </div>
+            <div class = "row dog_profile_pic">
+                 
+                 <div class = "col-lg-3" style= "background: white">
+                    DOG PICTURE WILL GO HERE - 
+                    CHANGE INLINE STYLING LATER
+                </div>
+            </div>
+        </div>
+               <table class="table table-dark">
+
+                 
+                  <thead>
+                    <tr>
+
+                      <th scope="col align-center"><%=@dog.name%> <%=@user.last_name%></th>
+                       </tr>
+                  </thead>
+                  <thead>
+                    <th scope="col">Age</th>
+                     <th scope="col">Weight</th>
+                     <th scope="col">Breed</th>
+                      <th scope="col">Temperment</th>
+                       <th scope="col"><%=@dog.name%>'s adress</th>
+                        <th scope="col">Walk Time</th>
+
+                  </thead>
+                  <tbody>
+                    
+
+                      <tr>
+
+                        
+                         
+                        <td><%=@dog.date_of_birth%></td>
+                        <td><%=@dog.weight%></td>
+                        <td><%=@dog.breed%></td>
+                        <td><%=@dog.temperment%></td>
+                        <td><%=@dog.user.address_line_one%></td>
+                        <%byebug%>
+                      
+                        <td><%=@current.date%>, <%@current.walk_start_time%></td>
+                        <td>
+                          <button type="button" class="btn btn-success book_dog_walk">Book!</button>
+                        </td>
+                      </tr>
+                   
+
+                  </tbody>
+              </table>
+       
+        </div>
+    
+    
+    </div>
+
+
+</div>
