@@ -1,101 +1,98 @@
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
     <div class="container-fluid">
-
     <!-- Fixed dashboard menu across top -->
+       <div class="row">
+         <div class="col-5">
+           <div class="col-12 box">
+             <div class="row">
+               <div class="col-5 user-image">
+                <!-- Instance variable here -->
+                <span>[THIS WILL BE A USER'S IMAGE]<span>
+               </div>
+               <div class="col-7">
+                 <span class="fs-subtitle">Name:</span><br>
+                 <!-- Instance variable here -->
+                 <span class="fs-subtitle">Address:</span><br>
+                 <span class="fs-subtitle">Dogs:</span><br>
 
-      <div class="row mt-5 align-center fixed-top">
-        <div class="col-5 box mt-4">
-          <div class="row">
-            <div class="col-6 user-image">
-              <!-- Instance variable here -->
-              <p>[THIS WILL BE A USER'S IMAGE]<p>
-              </div>
-            <div class="col-6">
-              <p class="user-name-heading">Name</p>
-              <!-- Instance variable here -->
-              <h5>[user.first_name] [user.last_name]</h5>
-              <p class="zipcode-heading">Zip Code</p>
-              <!-- Instance variable here -->
-              <h5>[user.postal_code]</h5>
+                 <!-- Instance variable here -->
+
+               </div>
+             </div>
+           </div>
+          </div>
+
+        <div class="col-2">
+          <div class="col-12">
+            <div class="d-flex justify-content-center">Request A Walk</div>
+            <div class="walk-request-button hvr-shrink d-flex justify-content-center">
+              <%= link_to image_tag("walk-request-button.png") %>
             </div>
-
-<div class="row mt-3">
-  <div class="col-lg-12">
-    <div class="row">
-      <div class="col-lg-3 mr-3">
-        <div class="col-lg-12 col-sm-12 mr-3">
-
-          <table class="table table-dark">
-            <div class="row">
-              <div class="col-lg-12 col-sm-12">
-
-                <h3>
-                  <%=@user.dogs.first.name%>'s Scheduled Walks! 
-                  </h3>
+          </div>
+         </div>
 
 
-                <thead>
-                  <tr>
+         <div class="col-5">
+           <div class="col-12 box">
+             <p>[THIS WILL SHOW ACCUMULATED TIME]</p>
+           </div>
+         </div>
+       </div>
 
-                    <th scope="col">Date</th>
 
-                    <th scope="col">Start Time</th>
-                    <th scope="col">End Time</th>
-                    <th scope="col">Walker</th>
-                  </tr>
-                </thead>
-                <tbody>
+       <div class="row mt-3">
 
-                  <% @dog.walk_requests.length.times do |walk| %>
-                    <tr>
+         <div class="col-4">
+           <div class="col-12">
+             <table class="table table-dark">
+               <div class="row">
+                 <div class="col-lg-12 col-sm-12">
+                   <h3>
+                     <%=@user.dogs.first.name%>'s Scheduled Walks! </h3>
 
-                      <td>
-                        <%=@dog.walk_requests.order(:date)[walk].date%>
-                      </td>
+                   <thead>
+                     <tr>
+                       <th scope="col">Date</th>
+                       <th scope="col">Start Time</th>
+                       <th scope="col">End Time</th>
+                       <th scope="col">Walker</th>
+                     </tr>
+                   </thead>
+                   <tbody>
 
-                      <td>start time</td>
-                      <td>end time</td>
-                      <td></td>
-                    </tr>
-                    <%end%>
-                </tbody>
-              </div>
-            </div>
-          </table>
+                     <% @dog.walk_requests.length.times do |walk| %>
+                       <tr>
 
-        </div>
-      </div>
-      <div class="col-lg-3 mr-3">
+                         <td>
+                           <%=@dog.walk_requests.order(:date)[walk].date%>
+                         </td>
 
-        <% if @user_walks.length < 1 %>
+                         <td>start time</td>
+                         <td>end time</td>
+                         <td></td>
+                       </tr>
+                       <%end%>
+                   </tbody>
+                 </div>
+               </div>
+             </table>
+           </div>
+         </div>
 
-          <div class="col-lg-12 col-sm-12">
-            <div class="row">
-              <h5>You have no walks shceduled. Get on it!</h5>
-            </div>
-            <% else %>
 
+
+
+
+      <div class="col-4">
+          <div class="col-12 ">
               <table class="table table-dark">
-
                 <div class="col-lg-12 col-sm-12">
-
                   <h3> Here's your walks,
                     <%=@user.first_name%>
                   </h3>
-
-
                   <thead>
                     <tr>
-
                       <th scope="col">Date</th>
-
                       <th scope="col">Dog</th>
                       <th scope="col">Owner</th>
                       <th scope="col">Location</th>
@@ -103,20 +100,14 @@
                     </tr>
                   </thead>
                   <tbody>
-
-
                     <%@user_walks.each do |walk| %>
-
                       <tr class="available_walk">
-
                         <td>
                           <%=walk.date%>
                         </td>
                         <td>
                           <%=walk.dog.name%>
                         </td>
-
-
                         <td>
                           <%=walk.user.first_name%>
                             <%=walk.user.last_name%>
@@ -134,48 +125,21 @@
                           </form>
                         </td>
                       </tr>
-                      <%end%>
-                        <%end%>
-
-
-
+                <% end %>
                   </tbody>
               </table>
-              </div>
-
-
-          </div>
-        </div>
-        <div class="col-2 box mt-4 d-flex justify-content-center">
-          <div class="row">
-            <div class="col-12">
-              <div>
-                <h5 class="text-center">Request A Walk</h5>
-              </div>
-              <div class="walk-request-button hvr-shrink">
-                <%= link_to image_tag("walk-request-button.png") %>
-              </div>
             </div>
->
           </div>
-        </div>
-        <div class="col-5 box mt-4">
-          <p>[THIS WILL SHOW ACCUMULATED TIME]
-        </div>
-      </div>
 
 
-          <div class="col-lg-3 mr-3">
-            <div class="col-lg-12 col-sm-12 mr-3">
-
+          <div class="col-4">
+            <div class="col-12">
               <table class="table table-dark">
-
                 <div class="col-lg-12 col-sm-12">
                   <h3>Hey
                     <%=@user.first_name%>, how about a walk?</h3>
                   <thead>
                     <tr>
-
                       <th scope="col">Dog</th>
                       <th scope="col">Owner</th>
                       <th scope="col">Start</th>
@@ -186,16 +150,14 @@
                   </thead>
                   <tbody>
                     <% @available_walks.each do |walk| %>
-                    <tr>
+
 
                         <td>
                           <%=walk.dog.name%>
                         </td>
-
-
                         <td>
                           <%=walk.user.first_name%>
-                            <%=walk.user.last_name%>
+                          <%=walk.user.last_name%>
                         </td>
                         <td>blaaa</td>
                         <td>blaablaa</td>
@@ -205,31 +167,13 @@
                           <%end%>
                         </td>
                       </tr>
-                      <%end%>
-
-
+                    <%end%>
                   </tbody>
               </table>
-                </div>
               </div>
             </div>
-
-
-
-            <!-- Instance variable here -->
-            <h3>
-            </h3>
           </div>
-      </div>
 
-
-       <!-- Instance variable here -->
-            <h3>
-            </h3>
-          </div>
         </div>
-      </div>
-    </div>
-</body>
-</html>
 
+  </div>
