@@ -89,7 +89,7 @@ p {
 }
 
 .bg-form {
-  background: url('background-3.jpg') no-repeat center center fixed;
+  background: url('background-6.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -251,7 +251,7 @@ footer {
     color: #666;
     margin-bottom: 20px;
 }
-
+//toggle for log in and sign up
 .hide {
   display: none
 }
@@ -262,6 +262,18 @@ footer {
 
 .login-box-link:hover {
   color: red
+}
+
+//confirmation text
+.text-wrapper {
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  width: 100%;
+  color: black;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bolder
 }
 //SIGN UP FORM DONE
 
