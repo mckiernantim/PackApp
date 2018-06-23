@@ -62,16 +62,16 @@
                    </thead>
                    <tbody>
 
-                     <% @dog.walk_requests.length.times do |walk| %>
+                     <% @user_walks.each do |walk| %>
+                     <% walker = User.where(id: walk.walker_id)%>
                        <tr>
-
-                         <td>
-                           <%=@dog.walk_requests.order(:date)[walk].date%>
+                          <td>
+                           <%=walk.date%>
                          </td>
 
-                         <td>start time</td>
-                         <td>end time</td>
+                         <td><%=walk.walk_start_time%></td>
                          <td></td>
+                         <td><%=walker.first.first_name%> <%=walker.first.last_name%>  </td>
                        </tr>
                        <%end%>
                    </tbody>

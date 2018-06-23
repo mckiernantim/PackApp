@@ -12,12 +12,12 @@ class WalkRequestsController < ApplicationController
   end
   def create
     WalkRequest.create(walk_request_params)
-    redirect_to dashboard_path()
+    redirect_to dashboard_index_path
   end
 # need to create show on dashboard 
   private
  def walk_request_params
-   params.require(:walk_request).permit()
+   params.require(:walk_request).permit(:walk_start_time, :date)
  end
-
+ 
 end
