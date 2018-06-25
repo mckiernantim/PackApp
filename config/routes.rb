@@ -5,9 +5,17 @@
       sessions: 'users/sessions'
      }
   resources :walk_requests do
+
+
+
     member do
       post '/confirm_walk_request', to: 'walk_confirmation#confirm_walk'
+     
+      get '/complete_walk', to: 'walk_requests#edit'
+            # /walk_requests/:id/complete_walk
+      post '/complete_walk', to: 'walk_requests#cancel', as: :cancel_walk
     end
+    
   end
 
 
@@ -24,7 +32,9 @@
 
   get '/confirm', to: 'walk_confirmation#index'
 
-  get '/confirm/:id', to: 'walk_confirmation#show'
+  
+  get '/confirm/:id', to: 'walk_requests#update'
+
 
 
 
