@@ -1,4 +1,6 @@
 class WalkRequestsController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @walk_request = WalkRequest.new
   end
@@ -9,15 +11,39 @@ class WalkRequestsController < ApplicationController
     #Also will be changed once devise works
     @dog = @user.dogs.first
     @current_walk = WalkRequest.find(params[:id])
-  end
-  def create
-    WalkRequest.create(walk_request_params)
+  
+    end
+  def update
+    @user = User.find(4)
+    
+    
+    this_walk_request = WalkRequest.find(params[:id])
+    this_walk_request.walker_id = @user.id
+    byebug
+    this_walk_request.save
+   
+ 
     redirect_to dashboard_index_path
   end
+
+  def edit
+      
+      @this_walk = WalkRequest.find(params[:id])
+
+  end
+
+  def cancel
+      
+      @this_walk = WalkRequest.find(params[:id])
+      @this_walk.walker_id = nil;
+      @this_walk.save
+
+      redirect_to dashboard_index_path
+
+  end
 # need to create show on dashboard 
+
   private
- def walk_request_params
-   params.require(:walk_request).permit(:walk_start_time, :date)
- end
+
  
 end
