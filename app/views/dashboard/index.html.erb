@@ -14,8 +14,9 @@
                  <!-- Instance variable here -->
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
                  <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
-
-                 <!-- Instance variable here -->
+                 <%= link_to new_dog_path do %>
+                 <button type="button" name="button" class="btn btn-dark">Add Dog</button>
+                 <% end %>
 
                </div>
              </div>
@@ -35,9 +36,12 @@
 
 
          <div class="col-4">
-           <div class="col-12 box">
-             <div class="stats-top">
-
+           <div class="box">
+             <div class="col-12 stats-top text-center p-1">
+                 <h2>Total Walk Credits Available</h2>
+             </div>
+             <div class="col-12 stats-bottom text-center">
+                 5
              </div>
            </div>
          </div>
@@ -114,8 +118,8 @@
                     <% if @user_walks %>
 
                     <%@user_walks.order(:date).each do |walk| %>
-                
-                    
+
+
                       <tr class="available_walk">
                         <td>
                           <%=walk.date%>
