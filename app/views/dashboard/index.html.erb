@@ -128,12 +128,15 @@
                         </td>
 
                         <td>
-                          <%= link_to  walk_request_path(walk) do%>
+                          <%= link_to  edit_walk_request_path(walk) do%>
                            <button type="button" class="btn btn-danger book_dog_walk">All Done!</button>
                         </td>
+                        <%end%>
                          <td>
+                           <%= link_to  edit_walk_request_path(walk) do%>
                            <button type="button" class="btn btn-info book_dog_walk">Cancel</button>
                         </td>
+                        <%end%>
 
                       </tr>
                 <% end %>

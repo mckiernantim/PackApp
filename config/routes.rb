@@ -4,9 +4,17 @@
        registrations: 'users/registrations'
      }
   resources :walk_requests do
+
+
+
     member do
       post '/confirm_walk_request', to: 'walk_confirmation#confirm_walk'
+     
+      get '/complete_walk', to: 'walk_requests#edit'
+            # /walk_requests/:id/complete_walk
+      post '/complete_walk', to: 'walk_requests#cancel', as: :cancel_walk
     end
+    
   end
   resources :dashboard
 

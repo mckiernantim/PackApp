@@ -23,7 +23,21 @@ class WalkRequestsController < ApplicationController
  
     redirect_to dashboard_index_path
   end
+  def edit
+      
+      @this_walk = WalkRequest.find(params[:id])
 
+  end
+
+  def cancel
+      
+      @this_walk = WalkRequest.find(params[:id])
+      @this_walk.walker_id = nil;
+      @this_walk.save
+
+      redirect_to dashboard_index_path
+
+  end
 # need to create show on dashboard 
   private
 
