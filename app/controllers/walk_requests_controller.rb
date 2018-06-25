@@ -1,4 +1,6 @@
 class WalkRequestsController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @walk_request = WalkRequest.new
   end
@@ -23,6 +25,7 @@ class WalkRequestsController < ApplicationController
  
     redirect_to dashboard_index_path
   end
+
   def edit
       
       @this_walk = WalkRequest.find(params[:id])
@@ -39,6 +42,7 @@ class WalkRequestsController < ApplicationController
 
   end
 # need to create show on dashboard 
+
   private
 
  
