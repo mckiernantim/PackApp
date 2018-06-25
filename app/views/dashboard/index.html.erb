@@ -1,7 +1,7 @@
   <div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
        <div class="row">
-         <div class="col-5">
+         <div class="col-4">
            <div class="col-12 box">
              <div class="row">
                <div class="col-5 user-image">
@@ -22,7 +22,7 @@
            </div>
           </div>
 
-        <div class="col-2">
+        <div class="col-4">
           <div class="col-12">
             <div class="d-flex justify-content-center">Request A Walk</div>
             <div class="walk-request-button hvr-shrink d-flex justify-content-center">
@@ -34,9 +34,11 @@
          </div>
 
 
-         <div class="col-5">
+         <div class="col-4">
            <div class="col-12 box">
-             <p>[THIS WILL SHOW ACCUMULATED TIME]</p>
+             <div class="stats-top">
+
+             </div>
            </div>
          </div>
        </div>
@@ -65,17 +67,18 @@
                      <% @dog.walk_requests.length.times do |walk| %>
                        <tr>
                          <td>
-                           <%=@dog.walk_requests.order(:date)[walk].date%>
+
                          </td>
                          <td>start time</td>
                          <td>end time</td>
 
                          <td></td>
-                         <td><%=walker.first.first_name%> <%=walker.first.last_name%>  </td>
+                         <td>name name  </td>
                        </tr>
+                        <% end %>
                        <% else %>
                        <p> there is nothing here </p>
-                       <% end %>
+
                        <%end%>
                    </tbody>
                  </div>
@@ -185,7 +188,7 @@
                         <td>blaablaa</td>
                         <td>
 
-                              <button type="button" class="btn btn-success book_dog_walk">Book!</button> 
+                              <button type="button" class="btn btn-success book_dog_walk">Book!</button>
 
 
                         </td>
