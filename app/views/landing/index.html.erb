@@ -4,11 +4,13 @@
       <h1 class="cursive">Pack!</h1>
       <h4>Dog Walking Cooperative</h4>
       <hr>
-      <form>
         <div class="form-group">
-          <input type="text" class="form-control form-rounded" placeholder="Enter Your Zipcode to Find your Pack">
+          <!-- <input type="text" name="postal_code_input" class="form-control form-rounded" placeholder="Enter Your Zipcode to Find your Pack"> -->
+          <%= form_tag(pre_dashboard_path, method: "get") do %>
+            <%= text_field_tag(:postal_code_input) %>
+            <%= submit_tag("Find") %>
+          <% end %>
         </div>
-      </form>
     </div>
   </div>
 </header>
