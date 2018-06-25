@@ -32,8 +32,16 @@
 
       </ul>
       <ul class="nav navbar-nav ml-auto">
+
+    <% if current_user %>
+      <li>
+        <%= link_to 'Dashboard', dashboard_path %>
+        <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
+        </li>
+      <% else %>
         <li>
           <%= link_to "Join the Pack", join_path %>
+          <% end %>
         </li>
 
       </ul>

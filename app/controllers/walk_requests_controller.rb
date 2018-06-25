@@ -1,4 +1,6 @@
 class WalkRequestsController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
     @walk_request = WalkRequest.new
   end
@@ -14,7 +16,7 @@ class WalkRequestsController < ApplicationController
     WalkRequest.create(walk_request_params)
     redirect_to dashboard_path()
   end
-# need to create show on dashboard 
+# need to create show on dashboard
   private
  def walk_request_params
    params.require(:walk_request).permit()
