@@ -17,6 +17,10 @@
                  <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
                  <%= link_to new_dog_path do %>
                  <button type="button" name="button" class="btn btn-dark">Add Dog</button>
+                 <% end %>
+                 <%= link_to edit_user_path(@user.id) do %>
+                 <button type="button" name="button" class="btn btn-dark">Edit</button>
+                 <% end %>
 
 
                </div>
