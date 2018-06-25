@@ -13,7 +13,7 @@
                   </span><br>
                  <!-- Instance variable here -->
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
-                 <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
+                 <span class="fs-subtitle">Dog: <%= "dog name here"%> </span><br>
 
                  <!-- Instance variable here -->
 
@@ -64,7 +64,7 @@
                    </thead>
                    <tbody>
                  <% if @dog %>
-                     <% @dog.walk_requests.length.times do |walk| %>
+                   <% @dog.walk_requests.length.times do |walk| %>
                        <tr>
                          <td>
 
@@ -121,7 +121,7 @@
                           <%=walk.date%>
                         </td>
                         <td>
-                          <%=walk.dog.name%>
+                          <%= "walk.dog.name"%>
                         </td>
                         <td>
                           <%=walk.user.first_name%>
@@ -132,7 +132,7 @@
                             <%=walk.user.postal_code%>
                         </td>
                         <td>
-                          <%=walk.walk_start_time%>
+                          <%="walk.walk_start_time"%>
                         </td>
 
                         <td>
