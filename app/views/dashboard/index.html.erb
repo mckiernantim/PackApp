@@ -85,7 +85,7 @@
 
 
 
-      <div class="col-4">
+      <div class="col-5">
           <div class="col-12 ">
               <table class="table table-dark">
                 <div class="col-lg-12 col-sm-12">
@@ -99,10 +99,15 @@
                       <th scope="col">Owner</th>
                       <th scope="col">Location</th>
                       <th scope='col'>Start</th>
+                      <th scope='col'>Walk Complete!</th>
+                      <th scope='col'>Cancel Walk</th>
                     </tr>
                   </thead>
                   <tbody>
+
                     <%@user_walks.order(:date).each do |walk| %>
+                
+                    
                       <tr class="available_walk">
                         <td>
                           <%=walk.date%>
@@ -122,6 +127,14 @@
                           <%=walk.walk_start_time%>
                         </td>
 
+                        <td>
+                          <%= link_to  walk_request_path(walk) do%>
+                           <button type="button" class="btn btn-danger book_dog_walk">All Done!</button>
+                        </td>
+                         <td>
+                           <button type="button" class="btn btn-info book_dog_walk">Cancel</button>
+                        </td>
+
                       </tr>
                 <% end %>
                   </tbody>
@@ -130,7 +143,7 @@
           </div>
 
 
-          <div class="col-4">
+          <div class="col-3">
             <div class="col-12">
               <table class="table table-dark">
                 <div class="col-lg-12 col-sm-12">

@@ -2,7 +2,7 @@ class WalkConfirmationController < ApplicationController
  
 
   def confirm_walk
-    @user=User.find(2)
+    @user=User.find(4)
     wr = WalkRequest.find(params[:id])
     wr.walker_id = @user.id
     wr.save

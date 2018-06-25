@@ -20,7 +20,7 @@
 
   get '/confirm', to: 'walk_confirmation#index'
   
-  get '/confirm/:id', to: 'walk_confirmation#show'
+  get '/confirm/:id', to: 'walk_requests#update'
 
   
 
