@@ -1,6 +1,11 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
+  
 
+    // This is the groundwork for a local AJAX call in case we want to go that direcito in regards to booking walks
+
+
+    
 $(document).ready(function() {
     // $('.book_dog_walk').click(function (e){
     //     console.log("CLICKED IT BRUH!!!!")
