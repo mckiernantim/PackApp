@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!
     def index
+
         if current_user
             @user_id = current_user.id
             @user = User.find(@user_id)
@@ -14,5 +15,6 @@ class DashboardController < ApplicationController
           redirect_to join_path, notice: 'You are not logged in'
         end
     end
+
 
 end
