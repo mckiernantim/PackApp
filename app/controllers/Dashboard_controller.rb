@@ -4,10 +4,8 @@ class DashboardController < ApplicationController
             @user = User.find(2)
             #Also will be changed once Active Record works
             @dog = @user.dogs.first
-            @available_walks = WalkRequest.where.not(user_id: @user.id)
+            @available_walks = WalkRequest.where.not(user_id: @user.id).where(walker_id: nil).near(@user.postal_code, 1);
             # will need to be changed once active record is working
             @user_walks = WalkRequest.where(user_id: @user.id)
-         
-            
     end
 end

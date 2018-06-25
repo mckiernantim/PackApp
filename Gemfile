@@ -18,6 +18,8 @@ gem 'jquery-easing-rails'
 
 gem "animate-rails"
 
+gem 'geocoder', '~> 1.2', '>= 1.2.9'
+
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

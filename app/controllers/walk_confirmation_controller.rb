@@ -1,5 +1,5 @@
 class WalkConfirmationController < ApplicationController
- 
+
 
   def confirm_walk
     @user=User.find(2)
