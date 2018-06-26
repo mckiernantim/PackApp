@@ -9,7 +9,7 @@ class WalkRequestsController < ApplicationController
   end
 
   def create
-      
+
     current_user.walk_requests.create(walk_request_params);
 
     # @walk_request = WalkRequest.new(walk_start_time: params[:walk_start_time], date: params[:date], dog_id: params[:dog_id])

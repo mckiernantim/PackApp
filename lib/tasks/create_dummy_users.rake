@@ -20,19 +20,19 @@ namespace :dummy do
         end
     end
 
-        # run rake dummy:create_dogs  
-        # this will only populate the NAME and ID 
-        
+        # run rake dummy:create_dogs
+        # this will only populate the NAME and ID
+
     task create_dogs: :environment do
         users= User.all,
-      
-        10.times do |i|
+
+        2.times do |i|
             Dog.create(
                 name: Faker::Dog.name,
                 weight: Faker::Dog.size,
                 temperment: "Good Boi",
                 breed: Faker::Dog.breed,
-                user_id: User.all[i].id,
+                user_id: 71,
                 date_of_birth: Faker::Dog.age,
                 )
             end
@@ -64,5 +64,3 @@ namespace :dummy do
         WalkRequest.destroy_all
     end
 end
-
-

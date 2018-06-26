@@ -1,4 +1,4 @@
-  <div class="container-fluid">
+<div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
        <div class="row ">
          <div class="col-4">
@@ -59,6 +59,7 @@
            </div>
          </div>
        </div>
+<<<<<<< HEAD
 
 
        <div class="row mt-3">
@@ -217,3 +218,90 @@
           </div>
         </div>
        </div>
+=======
+     </div>
+
+<div class="w3-container-fluid">
+  <div class="w3-row mt-5">
+    <div class="w3-col m3">
+      <h2 class="w3-center">Walk Requests</h2>
+      <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
+        <thead>
+          <tr class="table-header">
+            <th>Date</th>
+            <th>Time</th>
+            <th>Walker</th>
+            <th> </th>
+          </tr>
+        </thead>
+          <% if @dog %>
+            <h5 class="w3-center">Your dog's upcoming walks</h5>
+            <% @user.walk_requests.each do |walk| %>
+            <tr>
+              <td><%= walk.date.strftime("%b %e") %></td>
+              <td><%= walk.walk_start_time.strftime("%I:%M%P") %></td>
+              <td><%= walk.walker_id %></td>
+              <td><%= link_to  edit_walk_request_path(walk) do %>
+              <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
+            </tr>
+              <% end %>
+            <% end %>
+          <% else %>
+            <h5 class="w3-center">You haven't requested any walks</h5>
+          <% end %>
+      </table>
+    </div>
+    <div class="w3-col m5">
+      <h2 class="w3-center">Walks You're Taking</h2>
+        <h5 class="w3-center">Don't forget to hit "complete" to earn credit for your walk</h5>
+      <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
+        <thead>
+          <tr class="upcoming-walks-header">
+            <th>Date</th>
+            <th>Dog</th>
+            <th>Location</th>
+            <th>Time</th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+          </tr>
+        </thead>
+          <% if @user_walks %>
+            <% @user_walks.order(:date).each do |walk| %>
+              <tr>
+                <td><%= walk.date.strftime("%b %e") %></td>
+                <td><%= walk.dog.name %></td>
+                <td><%= walk.user.address_line_one %></td>
+                <td><%= walk.walk_start_time.strftime("%I:%M%P") %></td>
+                <td><%= link_to edit_walk_request_path(walk) do %>
+                   <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-indigo">Complete</button></td>
+                   <% end %>
+                <td><%= link_to  edit_walk_request_path(walk) do %>
+                <td><button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
+              </tr>
+               <% end %>
+            <% end %>
+          <% else %>
+            <h5 class="w3-center">Book a walk</h5>
+          <% end %>
+        </tr>
+      </table>
+    </div>
+    <div class="w3-col m4">
+      <h2 class="w3-center">Book A Walk</h2>
+      <h5 class="w3-center">Make a dog's day--and earn walk credit!</h5>
+      <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
+        <thead>
+          <tr class="table-header">
+            <th>Date</th>
+            <th>Dog</th>
+            <th>Location</th>
+            <th>Start Time</th>
+            <th>Book</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+>>>>>>> new_table_styling
