@@ -13,8 +13,11 @@
                   </span><br>
                  <!-- Instance variable here -->
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
-
-                 <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
+                <% if @dog.nil? %>
+                    <span class="fs-subtitle"> Please Add Your Dog </span>
+                 <% else %>
+                    <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
+                 <% end %>
                  <%= link_to new_dog_path do %>
                  <button type="button" name="button" class="btn btn-dark">Add Dog</button>
                  <% end %>
