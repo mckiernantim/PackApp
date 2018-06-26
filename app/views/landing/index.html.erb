@@ -5,10 +5,9 @@
       <h4>Dog Walking Cooperative</h4>
       <hr>
         <div class="form-group">
-          <!-- <input type="text" name="postal_code_input" class="form-control form-rounded" placeholder="Enter Your Zipcode to Find your Pack"> -->
           <%= form_tag(pre_dashboard_path, method: "get") do %>
-            <%= text_field_tag(:postal_code_input) %>
-            <%= submit_tag("Find") %>
+            <%= text_field_tag(:postal_code_input, 'Enter your zip code') %>
+            <%= submit_tag("Find your pack!") %>
           <% end %>
         </div>
     </div>
