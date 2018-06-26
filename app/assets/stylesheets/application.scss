@@ -19,9 +19,11 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Kalam|Montserrat|Open+Sans');
 $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Montserrat', sans-serif;
+$cursive: 'Kalam', cursive;
+
 
 $yellowish: #ffff69;
 $dark-blue: #253c78;
@@ -70,7 +72,6 @@ a:hover, a:focus, input:focus {
 
 }
 .dog-image{
- 
   max-width: 100%;
   max-height:100%;
   margin: auto  !important;
@@ -121,8 +122,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cursive {
-  font-family: 'Dancing Script', cursive;
-  text-transform: none;
+  font-family: $cursive;
+  font-size: 75px;
 }
 
 .text-faded {
@@ -378,7 +379,7 @@ header .header-content .inner p {
     max-width: 1000px;
   }
   header .header-content .inner h1 {
-    font-size: 53px;
+    font-size: 70px;
   }
   header .header-content .inner p {
     margin-right: auto;
@@ -477,5 +478,3 @@ textarea {
   padding: 15px 30px;
   font-size: 20px;
 }
-
-
