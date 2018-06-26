@@ -147,6 +147,23 @@
               <th>Start Time</th>
               <th>Book</th>
             </tr>
+            <%@available_walks.each do |walk|%>
+
+           
+                
+            <tr>
+                <td> <%=walk.date%> </td>
+                <td> <%=walk.dog.name%> </td>
+                <td> <%=walk.user.address_line_one%></td>
+                <td> <%=walk.walk_start_time.strftime("%I:%M%P")%></td>
+                <td><%=link_to walk_request_path(walk) do %>
+                 <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-green">Book!</button></td>
+            </tr>
+              
+           
+            <%end%>
+          <%end%> 
+               
           </thead>
         </table>
       </div>

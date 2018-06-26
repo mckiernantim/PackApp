@@ -22,9 +22,9 @@ class WalkRequestsController < ApplicationController
     #needs to be changed from .first once devise is up and running
     @user=current_user
     #Also will be changed once devise works
-    @dog = @user.dogs.first
+   
     @current_walk = WalkRequest.find(params[:id])
-
+    @dog = @current_walk.dog
   end
 
   def update
