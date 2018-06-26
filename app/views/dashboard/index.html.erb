@@ -1,19 +1,20 @@
 <div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
+
        <div class="row p-3">
+
          <div class="col-4">
            <div class="col-12 box dashboard_top_box">
              <div class="row image_row">
               <%if @dog%>
 
                <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
-               <%else%>
-                <div class="col-5 user-image">
 
+                 </div>
+               <% else %>
+                 <div class="col-5 user-image" style="background-image: url(https://s3.amazonaws.com/images.wealthyaffiliate.com/uploads/1301462/sitecontent/af8ee5123f4ea46c22cce4787400eeb11523982238_cropped.jpg?1523982247)">
+                 </div>
                <%end%>
-                <!-- Instance variable here -->
-
-
                <div class="col-7">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
@@ -32,12 +33,11 @@
                  <%= link_to edit_user_path(@user.id) do %>
                  <button type="button" name="button" class="btn btn-dark">Edit</button>
                  <% end %>
-
-
                </div>
              </div>
+             </div>
            </div>
-          </div>
+
 
         <div class="col-4">
           <div class="col-12">
@@ -62,6 +62,7 @@
              </div>
            </div>
          </div>
+
        </div>
 
 
@@ -89,7 +90,7 @@
                 <td><%= walk.date.strftime("%b %e") %></td>
                 <td><%= walk.walk_start_time.strftime("%I:%M%P") %></td>
 
-                <td><%= walk.walker_id %></td>
+                <td><%= User.find(walk.walker_id).first_name %> <%= User.find(walk.walker_id).last_name %></td>
 
                 <td><%= link_to  edit_walk_request_path(walk) do %>
                 <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
