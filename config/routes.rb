@@ -10,10 +10,8 @@
 
     member do
       post '/confirm_walk_request', to: 'walk_confirmation#confirm_walk'
-
-      get '/complete_walk', to: 'walk_requests#edit'
-            # /walk_requests/:id/complete_walk
-      post '/complete_walk', to: 'walk_requests#cancel', as: :cancel_walk
+      post '/mark_complete', to: 'walk_requests#complete_walk_request'
+      post '/cancel', to: 'walk_requests#cancel'
     end
 
   end

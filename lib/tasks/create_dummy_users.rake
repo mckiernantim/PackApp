@@ -45,7 +45,7 @@ namespace :dummy do
             10.times do |i|
                 WalkRequest.create(
                     user_id: User.all[i].id,
-                    walker_id: User.all[i+1].id,
+                    walker_id: 71,
                     dog_id: Dog.all[i].id,
                     date: Faker::Date.forward(14),
                     walk_start_time: Faker::Time.forward(23, :morning),
