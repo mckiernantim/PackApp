@@ -1,33 +1,22 @@
 <div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
-<<<<<<< HEAD
-       <div class="row">
-=======
+
        <div class="row p-3">
->>>>>>> 3cc1219cc761145eccaf37a4628b7b02e3b013d1
+
          <div class="col-4">
            <div class="col-12 box dashboard_top_box">
              <div class="row image_row">
               <%if @dog%>
 
                <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
-<<<<<<< HEAD
+
                  </div>
                <% else %>
-                 <div class="col-5 user-image" style="background-image: url('dog-defaut.jpg')">
+                 <div class="col-5 user-image" style="background-image: url(https://s3.amazonaws.com/images.wealthyaffiliate.com/uploads/1301462/sitecontent/af8ee5123f4ea46c22cce4787400eeb11523982238_cropped.jpg?1523982247)">
                  </div>
-=======
-               <%else%>
-                <div class="col-5 user-image">
 
->>>>>>> 3cc1219cc761145eccaf37a4628b7b02e3b013d1
                <%end%>
 
-<<<<<<< HEAD
-                <!-- Instance variable here -->
-=======
-
->>>>>>> 3cc1219cc761145eccaf37a4628b7b02e3b013d1
                <div class="col-7">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
