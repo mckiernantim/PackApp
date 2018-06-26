@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :dogs,  dependent: :destroy;
   has_many :walk_requests, dependent: :destroy;
+  has_many_attached :images
 
   geocoded_by :postal_code
 

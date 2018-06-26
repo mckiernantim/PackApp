@@ -20,7 +20,7 @@ class WalkRequestsController < ApplicationController
 
   def show
     #needs to be changed from .first once devise is up and running
-    @user=User.find(4)
+    @user=current_user
     #Also will be changed once devise works
     @dog = @user.dogs.first
     @current_walk = WalkRequest.find(params[:id])
@@ -44,7 +44,7 @@ class WalkRequestsController < ApplicationController
       @this_walk = WalkRequest.find(params[:id])
       @this_walk.walker_id = nil;
       @this_walk.save
-      redirect_to dashboard_index_path
+      redirect_to dashboard_path
   end
 # need to create show on dashboard
 
