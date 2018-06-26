@@ -1,20 +1,23 @@
   <div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
-       <div class="row">
+       <div class="row ">
          <div class="col-4">
-           <div class="col-12 box">
-             <div class="row">
-               <div class="col-5 user-image">
+           <div class="col-12 box dashboard_top_box">
+             <div class="row image_row">
+              <%if @dog%>
+               <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
+               <%end%>
                 <!-- Instance variable here -->
-                <span>[THIS WILL BE A USER'S IMAGE]<span>
+                 
                </div>
                <div class="col-7">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
                  <!-- Instance variable here -->
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
-
+                  <%if @dog%>
                  <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
+                 <%end%>
                  <%= link_to new_dog_path do %>
                  <button type="button" name="button" class="btn btn-dark">Add Dog</button>
 
@@ -38,7 +41,7 @@
 
 
          <div class="col-4">
-           <div class="box">
+           <div class="box dashboard_top_box">
              <div class="col-12 stats-top text-center p-1">
                  <h2>Total Walk Credits Available</h2>
              </div>
@@ -57,8 +60,9 @@
              <table class="table table-dark">
                <div class="row">
                  <div class="col-lg-12 col-sm-12">
+                 <%if @dog%>
                    <h3>
-                     needs if's Scheduled Walks! </h3>
+                     <%= @dog.name %>'s Scheduled Walks! </h3>
 
                    <thead>
                      <tr>
@@ -69,7 +73,7 @@
                      </tr>
                    </thead>
                    <tbody>
-                 <% if @dog %>
+                
                    <% @dog.walk_requests.length.times do |walk| %>
                        <tr>
                          <td>
@@ -83,7 +87,7 @@
                        </tr>
                         <% end %>
                        <% else %>
-                       <p> there is nothing here </p>
+                       <p>Uh oh - there are no dogs linked to your account sign one up! </p>
 
                        <%end%>
                    </tbody>
@@ -127,7 +131,7 @@
                           <%=walk.date%>
                         </td>
                         <td>
-                          <%= "walk.dog.name"%>
+                          <%= walk.dog.name%>
                         </td>
                         <td>
                           <%=walk.user.first_name%>
@@ -138,7 +142,7 @@
                             <%=walk.user.postal_code%>
                         </td>
                         <td>
-                          <%="walk.walk_start_time"%>
+                          <%=walk.walk_start_time%>
                         </td>
 
                         <td>
@@ -167,45 +171,41 @@
             <div class="col-12">
               <table class="table table-dark">
                 <div class="col-lg-12 col-sm-12">
-                  <h3>Hey
-                    <%=@user.first_name%>, how about a walk?</h3>
+                  <h3>Hey <%=@user.first_name%>, how about a walk?</h3>
                   <thead>
                     <tr>
                       <th scope="col">Dog</th>
                       <th scope="col">Owner</th>
                       <th scope="col">Start</th>
-                      <th scope="col">End</th>
+                      <th scope="col">Date</th>
                       <th scope='col'>Location</th>
 
                     </tr>
                   </thead>
                   <tbody>
-
-
-
-                        <td>
-                          Dogg Nmae
-                        </td>
-                        <td>
-                          First Name
-                          Last Name
-                        </td>
-                        <td>blaaa</td>
-                        <td>blaablaa</td>
-                        <td>
-
-                              <button type="button" class="btn btn-success book_dog_walk">Book!</button>
-
-
-                        </td>
-                      </tr>
-
+                   
+                    <% @available_walks.each do |walk| %>
+                    <tr>
+                      <td>
+                        <%=walk.dog.name%>
+                      </td>
+                      <td>
+                        <%=walk.user.first_name%>
+                        <%=walk.user.last_name%>
+                      </td>
+                      <td><%=walk.walk_start_time%></td>
+                      <td><%=walk.date%></td>
+                      <td><%=walk.user.address_line_one%></td>
+                      <td><%=link_to walk_request_path(walk) do%>
+                        <button type="button" class="btn btn-success book_dog_walk" >Book!</button>
+                      </td>
+                        <%end%>
+                      <%end%>
+                    </tr>
                   </tbody>
               </table>
               </div>
             </div>
           </div>
-
         </div>
-
-  </div>
+       </div>

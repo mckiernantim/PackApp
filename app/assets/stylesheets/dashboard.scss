@@ -13,12 +13,21 @@
   margin-top: 15px;
   background: white;
   color: black;
-  height: 150px;
   border-radius: 2px
+}
+.dashboard_top_box {
+  height: 100%;
+}
+.image_row{
+  height:100%;
 }
 
 .user-image {
-  border-right: solid black;
+  
+  height: auto;
+  width: auto;
+  background-size: cover;
+  
 }
 
 .walk-request-button {

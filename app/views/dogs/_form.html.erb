@@ -22,6 +22,8 @@
       <div class="field">
         <%= d.text_field :temperment, autocomplete: "off", placeholder: "Temperment" %>
       </div>
+      <div class="field">
+        <%= d.file_field :image %>
 
       <div class="actions">
         <%= d.submit "Add Dog", :class => "action-button"%>
