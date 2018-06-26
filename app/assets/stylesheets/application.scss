@@ -67,8 +67,8 @@ a:hover, a:focus, input:focus {
   outline: 0;
 }
 .dog-container{
-  width:350px;
-  height:350px;
+  width:200px;
+  height:200px;
 
 }
 .dog-image{
@@ -76,6 +76,8 @@ a:hover, a:focus, input:focus {
   max-height:100%;
   margin: auto  !important;
   border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 p {
