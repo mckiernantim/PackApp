@@ -18,6 +18,7 @@ gem 'jquery-easing-rails'
 
 gem "animate-rails"
 
+gem "aws-sdk-s3", require: false
 gem 'geocoder', '~> 1.2', '>= 1.2.9'
 
 gem 'sass-rails', '~> 5.0'

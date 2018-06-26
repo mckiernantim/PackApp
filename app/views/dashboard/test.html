@@ -1,238 +1,79 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title></title>
-</head>
-
-<body>
-  <div class="container-fluid">
-
-    <!-- Fixed dashboard menu across top -->
-
-    <div class="row mt-5 align-center fixed-top">
-      <div class="col-5 box mt-4">
-        <div class="row">
-          <div class="col-6 user-image">
-            <!-- Instance variable here -->
-            <p>[THIS WILL BE A USER'S IMAGE]
-              <p>
-          </div>
-          <div class="col-6">
-            <p class="user-name-heading">Name</p>
-            <!-- Instance variable here -->
-            <h5>[user.first_name] [user.last_name]</h5>
-            <p class="zipcode-heading">Zip Code</p>
-            <!-- Instance variable here -->
-            <h5>[user.postal_code]</h5>
-          </div>
-
-          <div class="row mt-3">
-            <div class="col-lg-12">
-              <div class="row">
-                <div class="col-lg-3 mr-3">
-                  <div class="col-lg-12 col-sm-12 mr-3">
-
-                    <table class="table table-dark">
-                      <div class="row">
-                        <div class="col-lg-12 col-sm-12">
-
-                          <h3>
-                            <%=@user.dogs.first.name%>'s Scheduled Walks! </h3>
-
-
-                          <thead>
-                            <tr>
-
-                              <th scope="col">Date</th>
-
-                              <th scope="col">Start Time</th>
-                              <th scope="col">End Time</th>
-                              <th scope="col">Walker</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-
-                            <% @dog.walk_requests.length.times do |walk| %>
-                              <tr>
-
-                                <td>
-                                  <%=@dog.walk_requests.order(:date)[walk].date%>
-                                </td>
-
-                                <td>start time</td>
-                                <td>end time</td>
-                                <td></td>
-                              </tr>
-                              <%end%>
-                          </tbody>
-                        </div>
-                      </div>
-                    </table>
-
-                  </div>
-                </div>
-                <div class="col-lg-3 mr-3">
-
-                  <% if @user_walks.length < 1 %>
-
-                    <div class="col-lg-12 col-sm-12">
-                      <div class="row">
-                        <h5>You have no walks shceduled. Get on it!</h5>
-                      </div>
-                      <% else %>
-
-                        <table class="table table-dark">
-
-                          <div class="col-lg-12 col-sm-12">
-
-                            <h3> Here's your walks,
-                              <%=@user.first_name%>
-                            </h3>
-
-                                
-                            <thead>
-                              <tr>
-
-                                <th scope="col">Date</th>
-
-                                <th scope="col">Dog</th>
-                                <th scope="col">Owner</th>
-                                <th scope="col">Location</th>
-                                <th scope='col'>Start</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-
-
-                              <%@user_walks.each do |walk| %>
-
-                                <tr class="available_walk">
-
-                                  <td>
-                                    <%=walk.date%>
-                                  </td>
-                                  <td>
-                                    <%=walk.dog.name%>
-                                  </td>
-
-
-                                  <td>
-                                    <%=walk.user.first_name%>
-                                      <%=walk.user.last_name%>
-                                  </td>
-                                  <td>
-                                    <%=walk.user.address_line_one%>
-                                      <%=walk.user.postal_code%>
-                                  </td>
-                                  <td>
-                                    <%=walk.walk_start_time%>
-                                  </td>
-                                  <td>
-                                    <form action="dashboard" method="update">
-                                      <submit type="button" class="btn btn-success book_dog_walk">Book!</submit>
-                                    </form>
-                                  </td>
-                                </tr>
-                                <%end%>
-                                  <%end%>
-
-
-
-                            </tbody>
-                        </table>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="col-2 box mt-4 d-flex justify-content-center">
-                  <div class="row">
-                    <div class="col-12">
-                      <div>
-                        <h5 class="text-center">Request A Walk</h5>
-                      </div>
-                      <div class="walk-request-button hvr-shrink">
-                        <%= link_to image_tag("walk-request-button.png") %>
-                      </div>
-                    </div>
-                    >
-                  </div>
-                </div>
-                <div class="col-5 box mt-4">
-                  <p>[THIS WILL SHOW ACCUMULATED TIME]
-                </div>
-              </div>
-
-
-              <div class="col-lg-3 mr-3">
-                <div class="col-lg-12 col-sm-12 mr-3">
-
-                  <table class="table table-dark">
-
-                    <div class="col-lg-12 col-sm-12">
-                      <h3>Hey
-                        <%=@user.first_name%>, how about a walk?</h3>
-                      <thead>
-                        <tr>
-
-                          <th scope="col">Dog</th>
-                          <th scope="col">Owner</th>
-                          <th scope="col">Start</th>
-                          <th scope="col">End</th>
-                          <th scope='col'>Location</th>
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <% @available_walks.each do |walk| %>
-
-
-
-
-                          <tr>
-
-                            <td>
-                              <%=walk.dog.name%>
-                            </td>
-
-
-                            <td>
-                              <%=walk.user.first_name%>
-                                <%=walk.user.last_name%>
-                            </td>
-                            <td>blaaa</td>
-                            <td>blaablaa</td>
-                            <td>
-                              <button type="button" class="btn btn-success book_dog_walk">Book!</button>
-                            </td>
-                          </tr>
-                          <%end%>
-
-
-                      </tbody>
-                  </table>
-                  </div>
-                </div>
-              </div>
-
-
-
-              <!-- Instance variable here -->
-              <h3>
-              </h3>
+<div class="container-fluid bg-form py-5">
+  <div class="row">
+    <div class="col-6 text-center">
+      <div class="row">
+        <div class="col-12 text-center">
+          <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
+            <div class="m-3 mb-5">
+              Say hi to
+              <%=@dog.name%>
+                <br>
             </div>
-          </div>
-
-
-          <!-- Instance variable here -->
-          <h3>
-          </h3>
+            <div class="col-12 text-center">
+              <div class="m-3 mb-5" style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
+                <br>
+              </div>
+            </div>
         </div>
+        <br> If you need to a cancel the walk, please be sure to do so via your dashboard.
       </div>
     </div>
-  </div>
-</body>
 
-</html>
+    <div class="col-6 form">
+      <fieldset>
+        <h2 class="fs-title">Walk Confirmation</h2>
+        <h3 class="fs-subtitle">By Clicking Confirm You Agree to take
+          <span style="color:#263b77; font-size:18px">
+            <%=@dog.name%>
+              <%=@user.last_name%>
+          </span> for a Walk - this has inline styling! change it later!</h2>
+
+          <div class="text-wrapper">
+            <span class="text-muted">Dog Name: </span>
+            <%=@dog.name%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Temperment:</span>
+            <%=@dog.temperment%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Breed </span>
+            <%=@dog.breed%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted"> Weight </span>
+            <%=@dog.weight%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Date & Time: </span>
+            <%=@current_walk.date%> at
+              <%=@current_walk.walk_start_time%> - uhh - what?
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">
+              <%=@dog.name%>'s Owner </span>
+            <%=@user.last_name%>,
+              <%=@user.first_name%>
+          </div>
+          <div class="text-wrapper">
+            <span class="text-muted">Human Address: </span>
+            <%=@user.address_line_one%>,
+              <%=@user.postal_code%>
+          </div>
+
+          <div>
+
+
+
+            <%= button_to "Confirm", confirm_walk_request_walk_request_path, class: "action-button"%>
+
+
+
+          </div>
+
+
+      </fieldset>
+
+    </div>
+  </div>
+</div>

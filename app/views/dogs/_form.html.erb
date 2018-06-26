@@ -1,0 +1,31 @@
+<fieldset>
+  <h3 class="fs-title user-auth-toggle">Add a Dog to your profile</a>
+    <h3 class="fs-subtitle">Join the Pack</h3>
+    <%= form_for @dog do |d| %>
+      <div class="field">
+        <%= d.text_field :name, autofocus: true, autocomplete: "off", placeholder: "Name:" %>
+      </div>
+
+      <div class="field">
+        <%= d.number_field :weight, autocomplete: "off", placeholder: "Weight" %>
+      </div>
+
+      <div class="field">
+        <%= d.date_field :date_of_birth, autocomplete: "off", placeholder: "DOB" %>
+      </div>
+
+      <div class="field">
+        <%= d.text_field :breed, autocomplete: "off", placeholder: "Breed" %>
+      </div>
+
+      <div class="field">
+        <%= d.text_field :temperment, autocomplete: "off", placeholder: "Temperment" %>
+      </div>
+      <div class="field">
+        <%= d.file_field :image %>
+
+      <div class="actions">
+        <%= d.submit "Add Dog", :class => "action-button"%>
+      </div>
+    <% end %>
+</fieldset>

@@ -10,15 +10,16 @@
 
     member do
       post '/confirm_walk_request', to: 'walk_confirmation#confirm_walk'
-     
+
       get '/complete_walk', to: 'walk_requests#edit'
             # /walk_requests/:id/complete_walk
       post '/complete_walk', to: 'walk_requests#cancel', as: :cancel_walk
     end
-    
+
   end
 
-
+resources :dogs
+resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "landing#index"
@@ -33,10 +34,7 @@
   get '/confirm', to: 'walk_confirmation#index'
 
 
-  
   get '/confirm/:id', to: 'walk_requests#update'
-
-
 
 
 
