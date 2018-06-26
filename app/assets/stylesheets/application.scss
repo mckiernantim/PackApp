@@ -18,11 +18,14 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Montserrat', sans-serif;
 
-$yellowish: #f0f3bd;
+$yellowish: #ffff69;
 $dark-blue: #253c78;
-$orangish: #d69768;
-$light-blue: #2b59c3;
+$orangish: #F6FFB9;
+
 
 
 html, body {
@@ -31,7 +34,7 @@ html, body {
 }
 
 body {
-  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $primary-font;
   color: black;
   padding-top: 70px;
 }
@@ -49,7 +52,7 @@ hr.light {
 }
 
 a {
-  color: $light-blue;
+  color: $dark-blue;
   transition: all .35s;
 }
 
@@ -58,14 +61,14 @@ a:hover, a:focus, input:focus {
   outline: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
-}
-
 p {
   font-size: 17px;
   line-height: 1.7;
   margin-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $secondary-font
 }
 
 .wide-space {
@@ -110,13 +113,6 @@ p {
   color: rgba(245, 245, 245, 0.7);
 }
 
-.text-dark {
-  color: #111;
-}
-
-.text-primary {
-  color: #9c27b0;
-}
 
 section {
   padding: 70px 0;
@@ -128,6 +124,7 @@ aside {
 
 footer {
   padding: 15px;
+  background-color: $yellowish
 }
 
 .no-padding {
@@ -136,12 +133,11 @@ footer {
 
 .navbar-expand-lg {
   border-color: rgba(35, 35, 35, .05);
-  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $secondary-font;
   transition: all .4s;
 }
 
 .navbar-header>.navbar-brand {
-  // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
   color: black;
   padding: 15px;
   transition: padding .2s ease-in;
@@ -173,7 +169,6 @@ footer {
 
 .navbar-expand-lg .nav>li.active>a, .navbar-expand-lg .nav>li.active>a:focus {
   color: #9c27b0 !important;
-  background-color: transparent;
 }
 
 .navbar-expand-lg .nav>li.active>a:hover, .navbar-expand-lg .nav>li.active>a:focus:hover {
@@ -207,7 +202,7 @@ footer {
     margin-bottom: 10px;
     width: 100%;
     box-sizing: border-box;
-    font-family: montserrat;
+    font-family: $secondary-font;
     color: $dark-blue;
     font-size: 13px;
 }
@@ -259,7 +254,7 @@ footer {
 }
 .active {
   font-size: 18px;
-  color: $light-blue !important
+  color: $dark-blue !important
 }
 
 .login-box-link:hover {
@@ -281,9 +276,7 @@ footer {
 
 @media(min-width:768px) {
   .navbar-expand-lg {
-    border-color: transparent;
-    background-color: transparent;
-    min-height: 60px;
+    background-color: white;
   }
   .navbar-header>.navbar-brand {
     color: black;
@@ -301,26 +294,13 @@ footer {
   .navbar-expand-lg .nav>li>a:hover, .navbar-expand-lg .nav>li>a:focus:hover {
     color: black;
   }
-  .navbar-expand-lg.affix {
-    border-color: rgba(34, 34, 34, .05);
-    background-color: #222;
-  }
   .navbar-expand-lg.affix .navbar-header .navbar-brand {
     font-size: 15px;
     color: #9c27b0;
     padding: 20px;
     letter-spacing: 1px;
   }
-  .navbar-expand-lg.affix .navbar-header .navbar-brand:hover, .navbar-expand-lg.affix .navbar-header .navbar-brand:focus {
-    color: #8b27b0;
-  }
-  .navbar-expand-lg.affix .nav>li>a, .navbar-expand-lg.affix .nav>li>a:focus {
-    color: #ddd;
-    text-shadow: 1px 1px 1px rgba(30, 30, 30, 0.7);
-  }
-  .navbar-expand-lg.affix .nav>li>a:hover, .navbar-expand-lg.affix .nav>li>a:focus:hover {
-    color: #9c27b0;
-  }
+
 }
 
 header {
@@ -352,10 +332,6 @@ header .header-content .inner p {
   font-size: 16px;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.7);
-}
-
-footer {
-  background-color: #2d2d2d;
 }
 
 
@@ -468,8 +444,6 @@ textarea {
   background-color: black;
   border: 1px solid #f0f0f0;
   border-color: #f0f0f0;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
   transition: all .35s;
 }
 
@@ -480,7 +454,7 @@ textarea {
 .btn {
   border: 0;
   border-radius: 200px;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: $secondary-font
 }
 
 .btn-xl {
