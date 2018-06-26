@@ -4,10 +4,7 @@
     <div class="col-6 text-center">
        <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
        <div class="m-3 mb-5">
-        Need to cancel a walk?   <br> We got you covered
-        <br>
-        <br>
-        Just confrim wtith us
+        Need to cancel a walk?   <br> We've got you covered
        </div>
     </div>
 
@@ -16,27 +13,27 @@
         <a class="active fs-title user-auth-toggle">Sign Up</a>
         <a class="fs-title user-auth-toggle">Login</a>
         <h3 class="fs-subtitle">Join the Pack</h3>
-       
+
 
           <div class="field">
           Dog: <%= @this_walk.dog.name%>
-        
+
          </div>
 
           <div class="field">
          Walk Time:  <%= @this_walk.walk_start_time%>
-          
+
           </div>
 
           <div class="field">
           Date: <%= @this_walk.date%>
-          </div> 
+          </div>
                 <%= button_to("Cancel Walk", {action: "cancel"}, data: {confirm: "Are you sure you want to cancel this walk?" } )%>
-     
+
           </div>
 
-     
-       
+
+
      </fieldset>
 
     </div>

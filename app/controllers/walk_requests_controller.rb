@@ -36,8 +36,16 @@ class WalkRequestsController < ApplicationController
   end
 
   def edit
-      @this_walk = WalkRequest.find(params[:id])
-   end
+    @this_walk = WalkRequest.find(params[:id])
+  end
+
+  def complete_walk_request
+    @this_walk = WalkRequest.find(params[:id])
+    @this_walk.update(completed:1)
+    current_user.increment!(:credit, 1)
+
+    redirect_to dashboard_path
+  end
 
   def cancel
 
