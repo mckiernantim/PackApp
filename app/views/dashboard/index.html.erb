@@ -5,8 +5,11 @@
            <div class="col-12 box dashboard_top_box">
              <div class="row image_row">
               <%if @dog%>
-               <div class="col-5 user-image"  style="background-image: url (<%= url_for(@dog.image) if @dog.image.attached? %>)">
-                 </div>
+
+               <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
+               <%else%>
+                <div class="col-5 user-image">
+
                <%end%>
                 <!-- Instance variable here -->
 
