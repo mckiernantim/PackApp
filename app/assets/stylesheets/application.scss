@@ -53,7 +53,7 @@ a {
   transition: all .35s;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, input:focus {
   color: #9c27c1;
   outline: 0;
 }
@@ -74,7 +74,6 @@ p {
 
 .icon-lg {
   font-size: 50px;
-  line-height: 18px;
 }
 
 .bg-primary {
@@ -138,7 +137,6 @@ footer {
 .navbar-expand-lg {
   border-color: rgba(35, 35, 35, .05);
   // font-family: 'Questrial', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #222;
   transition: all .4s;
 }
 
@@ -165,11 +163,12 @@ footer {
   text-transform: uppercase;
   font-size: 13px;
   font-weight: 700;
-  color: #eee;
+  color: white;
 }
 
 .navbar-expand-lg .nav>li>a:hover, .navbar-expand-lg .nav>li>a:focus:hover {
   color: #9c27b0;
+  text-decoration: none
 }
 
 .navbar-expand-lg .nav>li.active>a, .navbar-expand-lg .nav>li.active>a:focus {
@@ -294,7 +293,7 @@ footer {
     color: #f4f4f4;
   }
   .navbar-expand-lg .nav>li>a, .navbar-expand-lg .nav>li>a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: $dark-blue;
     padding: 20px;
     letter-spacing: 1.1px;
     text-shadow: 1px 1px 1px rgba(60, 60, 60, 0.7);
@@ -370,7 +369,7 @@ footer {
 
 @media(min-width:768px) {
   .icon-lg {
-    font-size: 80px;
+    font-size: 40px;
   }
   header {
     min-height: 100%;
@@ -480,7 +479,7 @@ textarea {
 
 .btn {
   border: 0;
-  border-radius: 290px;
+  border-radius: 200px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
