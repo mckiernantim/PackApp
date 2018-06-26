@@ -15,18 +15,18 @@
                  <div class="col-5 user-image" style="background-image: url(https://s3.amazonaws.com/images.wealthyaffiliate.com/uploads/1301462/sitecontent/af8ee5123f4ea46c22cce4787400eeb11523982238_cropped.jpg?1523982247)">
                  </div>
                <%end%>
-               <div class="col-7">
+               <div class="col-7 p-3">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
                  <!-- Instance variable here -->
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
 
                 <% if @dog.nil? %>
-                    <span class="fs-subtitle"> Please Add Your Dog </span>
+                    <span class="fs-subtitle"> Please Add Your Dog </span><br>
                  <% else %>
                     <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
                  <% end %>
-
+                <br>
                  <%= link_to new_dog_path do %>
                  <button type="button" name="button" class="btn btn-dark">Add Dog</button>
                  <% end %>
@@ -60,6 +60,7 @@
              <div class="col-12 stats-bottom text-center">
                  5
              </div>
+               <button class="walk-toggle"> Earn More Credits By Picking Up A Walk</button>
            </div>
          </div>
 
@@ -71,7 +72,7 @@
 
   <div class="w3-container-fluid">
     <div class="w3-row mt-5">
-      <div class="w3-col m3">
+      <div class="w3-col m6 walk-req">
         <h2 class="w3-center">Walk Requests</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
@@ -102,7 +103,7 @@
             <% end %>
         </table>
       </div>
-      <div class="w3-col m5">
+      <div class="w3-col m6 walk-req">
         <h2 class="w3-center">Walks You're Taking</h2>
           <h5 class="w3-center">Don't forget to hit "complete" to earn credit for your walk</h5>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
@@ -138,7 +139,7 @@
           </tr>
         </table>
       </div>
-      <div class="w3-col m4">
+      <div class="w3-col m12 hide book-walk-box">
         <h2 class="w3-center">Book A Walk</h2>
         <h5 class="w3-center">Make a dog's day--and earn walk credit!</h5>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
@@ -155,3 +156,4 @@
       </div>
     </div>
   </div>
+</div>
