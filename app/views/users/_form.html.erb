@@ -1,0 +1,29 @@
+<fieldset>
+  <h3 class="fs-title user-auth-toggle">Edit Your Profile</a>
+    <h3 class="fs-subtitle">Join the Pack</h3>
+    <%= form_for @user do |u| %>
+      <div class="field">
+        <%= u.text_field :first_name, autofocus: true, autocomplete: "off", placeholder: "First Name" %>
+      </div>
+
+      <div class="field">
+        <%= u.text_field :last_name, autocomplete: "off", placeholder: "Last Name" %>
+      </div>
+
+      <div class="field">
+        <%= u.email_field :email, autocomplete: "off", placeholder: "Email" %>
+      </div>
+
+      <div class="field">
+        <%= u.text_field :address_line_one, autocomplete: "off", placeholder: "Address" %>
+      </div>
+
+      <div class="field">
+        <%= u.text_field :postal_code, autocomplete: "off", placeholder: "Postal Code" %>
+      </div>
+
+      <div class="actions">
+        <%= u.submit "Edit", :class => "action-button"%>
+      </div>
+    <% end %>
+</fieldset>
