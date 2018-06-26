@@ -1,15 +1,18 @@
 <div class="container-fluid">
     <!-- Fixed dashboard menu across top -->
-       <div class="row ">
+       <div class="row">
          <div class="col-4">
            <div class="col-12 box dashboard_top_box">
              <div class="row image_row">
               <%if @dog%>
                <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
+                 </div>
+               <% else %>
+                 <div class="col-5 user-image" style="background-image: url('dog-defaut.jpg')">
+                 </div>
                <%end%>
-                <!-- Instance variable here -->
 
-               </div>
+                <!-- Instance variable here -->
                <div class="col-7">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
@@ -28,12 +31,11 @@
                  <%= link_to edit_user_path(@user.id) do %>
                  <button type="button" name="button" class="btn btn-dark">Edit</button>
                  <% end %>
-
-
                </div>
              </div>
+             </div>
            </div>
-          </div>
+
 
         <div class="col-4">
           <div class="col-12">
@@ -58,6 +60,7 @@
              </div>
            </div>
          </div>
+
        </div>
 
 
