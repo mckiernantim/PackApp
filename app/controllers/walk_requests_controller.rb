@@ -9,7 +9,7 @@ class WalkRequestsController < ApplicationController
   end
 
   def create
-      
+
     current_user.walk_requests.create(walk_request_params);
 
     # @walk_request = WalkRequest.new(walk_start_time: params[:walk_start_time], date: params[:date], dog_id: params[:dog_id])
@@ -44,7 +44,7 @@ class WalkRequestsController < ApplicationController
       @this_walk = WalkRequest.find(params[:id])
       @this_walk.walker_id = nil;
       @this_walk.save
-      redirect_to dashboard_index_path
+      redirect_to dashboard_path
   end
 # need to create show on dashboard
 

@@ -3,9 +3,7 @@ class DashboardController < ApplicationController
     def index
 
         if current_user
-            @user_id = current_user.id
-            @user = User.find(@user_id)
-
+            @user = current_user
 
             @dog = @user.dogs[0]
             @available_walks = WalkRequest.where.not(user_id: @user.id)
