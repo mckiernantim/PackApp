@@ -143,7 +143,10 @@ aside {
 
 footer {
   padding: 15px;
-  background-color: $yellowish
+  background-color: $yellowish;
+  bottom: 0px;
+  position: static;
+  width: 100%;
 }
 
 .no-padding {
@@ -359,7 +362,8 @@ header .header-content .inner p {
 }
 
 .logo-sm{
-  width: 2vw;
+  width: 40px;
+  margin-bottom: 5px;
 }
 
 @media(min-width:768px) {

@@ -20,12 +20,21 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-navbar">
       <ul class="nav navbar-nav">
+          <% if current_page?(controller: 'landing', action: 'index')%>
         <li>
           <a class="page-scroll" href="#one">About</a>
         </li>
         <li>
           <a class="page-scroll" href="#two">How it Works</a>
         </li>
+        <% else %>
+        <li>
+          <a href="/#one">About</a>
+        </li>
+        <li>
+          <a href="/#two">How It Works</a>
+        </li>
+        <% end %>
 
       </ul>
       <ul class="nav navbar-nav ml-auto">
@@ -47,18 +56,18 @@
 
   <%= yield %>
 
-  <footer id="footer" class="mt-5">
+  <footer id="footer" class="footer">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6 col-md-2 column">
-          <h4>Information</h4>
+          <h6>Information</h6>
           <ul class="list-unstyled">
             <li><a href="">Copyright Pack</a></li>
 
           </ul>
         </div>
         <div class="col-sm-6 col-md-2 column">
-          <h4>About</h4>
+          <h6>About</h6>
           <ul class="list-unstyled">
             <li><a href="">Don't Contact Us</a></li>
           </ul>
