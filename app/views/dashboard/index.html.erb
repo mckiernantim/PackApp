@@ -98,7 +98,7 @@
           </thead>
             <% if @dog %>
               <h5 class="w3-center">Your dog's upcoming walks</h5>
-              <% @user.walk_requests.each do |walk| %>
+              <% @user.walk_requests.where('Date>=?', Date.today).each do |walk| %>
 
               <tr>
                 <td><%= walk.date.strftime("%b %e") %></td>
@@ -175,20 +175,23 @@
               <th>Start Time</th>
               <th>Book</th>
             </tr> 
-            <!--CHECKS TO FILTER OUT AVAILABLE WALKS IF YOU'RE ALREADY SCHEDULED AT THAT TIME  -->
+            
               <%@available_walks.each do |walk|%>
+              
                  <% @restricted_times.each do |time| %>
+                   
                         <%@is_restricted = false%>
-                        <!--IF THE WALK TIME IS EQUAL TO A WALK TIME OF THE USER RESTRICTED BECOMES TRUE AND NOTHING IS RENDERED -->
+                       
                           <% if walk.walk_start_time == time.walk_start_time%>
-                              <% @is_restricted = true%>
-                                
+                              <%@is_restricted = true%>
+                                <%byebug%>
                                 <%break%>
                           <%end%>
                     <%end%>
-                    <!--IF RESTRICTED IS STILL FALSE WE RENDER THE WALK AS AVAILABLE -->
-                    <%if @is_restricted == false %>
+                   
+                    <%if @is_restricted == false%>
                       <tr>
+                    
                         <td> <%=walk.date%> </td>
                         <td> <%=walk.dog.name%> </td>
                         <td> <%=walk.user.address_line_one%></td>
@@ -199,7 +202,7 @@
                           <%end%>
                         </td>
                     </tr>
-                    <%end%>
+                  <%end%>
             <%end%> 
 
           </thead>

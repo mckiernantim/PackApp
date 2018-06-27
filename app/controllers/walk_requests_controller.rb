@@ -56,8 +56,7 @@ class WalkRequestsController < ApplicationController
   def cancel
 
       @this_walk = WalkRequest.find(params[:id])
-      @this_walk.walker_id = nil;
-      @this_walk.save
+    @this_walk.destroy
       redirect_to dashboard_path
   end
 # need to create show on dashboard
