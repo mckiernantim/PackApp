@@ -1,42 +1,37 @@
 <div class="container-fluid bg-form py-5">
   <div class="row">
-
     <div class="col-6 text-center">
        <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
        <div class="m-3 mb-5">
         Need to cancel a walk?   <br> We've got you covered
        </div>
     </div>
-
     <div class="col-6 form">
-     <fieldset class="auth-box" id="signup-box">
-        <a class="active fs-title user-auth-toggle">Sign Up</a>
-        <a class="fs-title user-auth-toggle">Login</a>
-        <h3 class="fs-subtitle">Join the Pack</h3>
-
-
-          <div class="field">
-          Dog: <%= @this_walk.dog.name%>
-
+     <fieldset>
+        <h3 class="fs-title">You Are About To Cancel This Walk </h3>
+          <div class="text-wrapper">
+           <span class="text-muted">Dog:</span>
+           <%= @this_walk.dog.name%>
          </div>
-
-          <div class="field">
-         Walk Time:  <%= @this_walk.walk_start_time%>
-
+          <div class="text-wrapper">
+            <span class="text-muted">Walk Time:</span>
+            <% h = @this_walk.walk_start_time%>
+             <%hour = h.strftime("%I")%>
+             <%min = h.strftime("%M")%>
+            <%="#{hour + ':'+ min}"%>
           </div>
-
-          <div class="field">
-          Date: <%= @this_walk.date%>
+          <div class="text-wrapper">
+            <span class="text-muted">Date:</span>
+           <% d =  @this_walk.date%>
+           <%month = d.strftime("%m")%>
+           <%day = d.strftime("%d")%>
+           <%year = d.strftime("%Y")%>
+           <%="#{month + '-' + day + '-' + year}"%>
           </div>
-                <%= button_to("Cancel Walk", {action: "cancel"}, data: {confirm: "Are you sure you want to cancel this walk?" } )%>
-
+          <div>
+                <%= button_to("Cancel Walk", {action: "cancel"}, class: 'action-button', data: {confirm: "Are you sure you want to cancel this walk?" } )%>
           </div>
-
-
-
      </fieldset>
-
     </div>
-
   </div>
 </div>

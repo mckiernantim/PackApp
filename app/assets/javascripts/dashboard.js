@@ -2,10 +2,6 @@
 // All this logic will automatically be available in application.js.
 
 
-// This is the groundwork for a local AJAX call in case we want to go that direcito in regards to booking walks
-
-
-
 $(document).ready(function() {
   if (document.querySelector('body.dashboard.index') == undefined) {
     return;
