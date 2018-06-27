@@ -4,12 +4,12 @@ class WalkConfirmationController < ApplicationController
 
 
   def confirm_walk
-    @user=User.find(4)
+    @user=current_user
     wr = WalkRequest.find(params[:id])
     wr.walker_id = @user.id
     wr.save
 
-    redirect_to dashboard_index_path
+    redirect_to dashboard_path
   end
 
 end

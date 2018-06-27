@@ -13,6 +13,7 @@ $(document).ready(function() {
   $('.walk-toggle').click(function() {
     $('.book-walk-box').toggleClass('hide');
     $('.walk-req').toggleClass('hide');
+    $('.walk-toggle').toggleClass('active');
   });
 
 });
