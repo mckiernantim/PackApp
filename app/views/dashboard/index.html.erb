@@ -41,11 +41,19 @@
 
         <div class="col-4">
           <div class="col-12">
-            <div class="d-flex justify-content-center">Request A Walk</div>
-            <div class="walk-request-button hvr-shrink d-flex justify-content-center">
-              <%= link_to new_walk_request_path do %>
-               <%= image_tag("walk-request-button.png") %>
-              <% end %>
+            <div class="d-flex justify-content-center">
+              <h2>Request A Walk</h2>
+            </div>
+            <div class="walk-request-button hvr-shrink d-flex justify-content-center w3-margin-top">
+            <% if @dog.nil? %>
+                <%= link_to new_dog_path do %>
+                  <%= image_tag("walk-request-button-2.png") %>
+                 <% end %>
+            <% else %>
+                <%= link_to new_walk_request_path do %>
+                 <%= image_tag("walk-request-button-2.png") %>
+                <% end %>
+             <% end %>
 
             </div>
           </div>
@@ -55,10 +63,10 @@
          <div class="col-4">
            <div class="box dashboard_top_box">
              <div class="col-12 stats-top text-center p-1">
-                 <h2>Total Walk Credits Available</h2>
+                 <h2>Your Walk Credits</h2>
              </div>
              <div class="col-12 stats-bottom text-center">
-                  <h2><%= @user_credit %></h2>
+                  <h1><%= @user_credit %></h1>
              </div>
 
            </div>
@@ -70,14 +78,14 @@
 
 
 
-  <div class="w3-container-fluid">
+  <div class="w3-container">
     <div class="m12 mt-5" style="border-bottom: 3px solid black">
-       <span class="walk-toggle active p-2 m-2">Your Walks   </span>
-       <span class="walk-toggle p-2 m-2">    Walk Someone's Dog</span>
+       <span class="walk-toggle active p-3 m-2">Your Walks   </span>
+       <span class="walk-toggle p-3 m-2">    Walk Someone's Dog</span>
+     </div>
 
-    </div>
     <div class="w3-row">
-      <div class="w3-col m6 walk-req">
+      <div class="w3-col m5 walk-req">
         <h2 class="w3-center">Walk Requests</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
@@ -95,9 +103,11 @@
               <tr>
                 <td><%= walk.date.strftime("%b %e") %></td>
                 <td><%= walk.walk_start_time.strftime("%I:%M%P") %></td>
-
-                <td><%= User.find(walk.walker_id).first_name %> <%= User.find(walk.walker_id).last_name %></td>
-
+              <% if walk.walker_id.nil? %>
+                <td>No Walker Yet</td>
+              <% else %>
+                <td><%= User.find(walk.walker_id).first_name %> <%= User.find(walk.walker_id).last_name %> </td>
+              <% end %>
                 <td><%= link_to  edit_walk_request_path(walk) do %>
                 <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
               </tr>
@@ -107,6 +117,9 @@
               <h5 class="w3-center">You haven't requested any walks</h5>
             <% end %>
         </table>
+      </div>
+      <div class="w3-col m1">
+        <p> </p>
       </div>
       <div class="w3-col m6 walk-req">
         <h2 class="w3-center">Walks You're Taking</h2>
@@ -133,8 +146,10 @@
                   <td><%= link_to mark_complete_walk_request_path(walk), method: :post do %>
                      <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-indigo">Complete</button></td>
                      <% end %>
+
                   <td><%= link_to view_walk_request_path(walk) do %>
                   <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
+
                 </tr>
                  <% end %>
               <% end %>
@@ -158,8 +173,8 @@
             </tr>
             <%@available_walks.each do |walk|%>
 
-           
-                
+
+
             <tr>
                 <td> <%=walk.date%> </td>
                 <td> <%=walk.dog.name%> </td>
@@ -168,11 +183,11 @@
                 <td><%=link_to walk_request_path(walk) do %>
                  <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-green">Book!</button></td>
             </tr>
-              
-           
+
+
             <%end%>
-          <%end%> 
-               
+          <%end%>
+
           </thead>
         </table>
       </div>
