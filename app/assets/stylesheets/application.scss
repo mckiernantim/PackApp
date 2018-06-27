@@ -25,7 +25,7 @@ $secondary-font: 'Montserrat', sans-serif;
 $cursive: 'Kalam', cursive;
 
 
-$yellowish: #ffff69;
+$yellowish: #F6FFB9;
 $dark-blue: #253c78;
 $orangish: #F6FFB9;
 
@@ -63,6 +63,10 @@ hr.light {
 a {
   color: $dark-blue;
   transition: all .35s;
+}
+
+.text-blue {
+  color: $dark-blue
 }
 
 a:hover, a:focus, input:focus {
