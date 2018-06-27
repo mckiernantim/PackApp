@@ -7,11 +7,11 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-6 text-center mt-5">
+        <div class="col-6 text-center mt-1">
           <h1 class="your-pack">Pack <%= @your_postal_code %></h1>
             <div class="row">
               <div class="col-6">
-                <div class="box mt-3">
+                <div class="box mt-3 w3-round-large">
                   <div class="col-12 stats-top text-center p-1">
                     <h2>Total Walkers</h2>
                   </div>
@@ -53,20 +53,20 @@
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div class="row align-items-center mt-4">
               <div class="col-4">
-                <div class="box dog-image">
-                  <img src="images/pre-dash-dog-image-1.jpg" alt="Gumby The Golden">
+                <div class="dog-image">
+                  <%= image_tag "pre-dash-dog-image-1.jpg", :alt => "Frenchie", :class => "w3-circle w3-image" %><figcaption class="mt-3 image-caption">You Could Walk Frenchie</figcaption>
                 </div>
               </div>
-              <div class="col-4">
-                <div class="box dog-image">
-                  <img src="" alt="[dog image]">
+              <div class="col-3 mr-4">
+                <div>
+                  <%= link_to 'Join The Pack!', new_user_registration_path, :class => "hvr-shrink w3-green w3-btn w3-round-xlarge w3-large" %>
                 </div>
               </div>
-              <div class="col-3">
-                <div class="btn btn-primary mt-4">
-                  <%= link_to 'Join This Pack!', new_user_registration_path, :class => "btn btn-primary" %>
+              <div class="col-4 ml-2">
+                <div class="dog-image">
+                    <%= image_tag "pre-dash-dog-image-2.jpg", :alt => "Goldie", :class => "w3-circle w3-image" %><figcaption class="mt-3 image-caption">Oliver's In This Pack</figcaption>
                 </div>
               </div>
             </div>

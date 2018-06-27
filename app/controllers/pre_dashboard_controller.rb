@@ -11,6 +11,9 @@ class PreDashboardController < ApplicationController
     dogs = Dog.where(user_id: user_ids)
     @num_dogs = dogs.length
 
+    # walks = Walk_request.where(completed: 1)
+
+
 
   end
 
