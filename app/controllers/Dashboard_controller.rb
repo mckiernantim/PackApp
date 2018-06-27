@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
             @user_id = current_user.id
             @user = User.find(@user_id)
             @user_credit = current_user.credit
-
+            @
             @dog = @user.dogs[0]
             @available_walks = WalkRequest.where.not(user_id: @user.id) 
             

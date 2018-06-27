@@ -91,7 +91,7 @@
                 <td><%= walk.date.strftime("%b %e") %></td>
                 <td><%= walk.walk_start_time.strftime("%I:%M%P") %></td>
 
-                <td><%= User.find(walk.walker_id).first_name %> <%= User.find(walk.walker_id).last_name %></td>
+                <td><%=@walker.first_name%></td>
 
                 <td><%= link_to  edit_walk_request_path(walk) do %>
                 <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
