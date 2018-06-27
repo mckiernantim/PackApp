@@ -47,6 +47,12 @@ class WalkRequestsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def view
+    @this_walk = WalkRequest.find(params[:id])
+
+  
+  end
+
   def cancel
 
       @this_walk = WalkRequest.find(params[:id])

@@ -146,8 +146,10 @@
                   <td><%= link_to mark_complete_walk_request_path(walk), method: :post do %>
                      <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-indigo">Complete</button></td>
                      <% end %>
-                  <td><%= link_to cancel_walk_request_path(walk) do %>
-                  <td><button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
+
+                  <td><%= link_to view_walk_request_path(walk) do %>
+                  <button type="button" class="w3-button w3-padding-small w3-tiny w3-round w3-red">Cancel</button></td>
+
                 </tr>
                  <% end %>
               <% end %>
