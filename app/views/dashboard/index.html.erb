@@ -4,12 +4,12 @@
        <div class="row p-3">
 
          <div class="col-4">
-            <div class="box dashboard_top_box">
+            <div class="box">
                 <div class="col-12 stats-top text-center p-1">
                    <h2><%= @user_name %>'s Profile</h2>
                 </div>
 
-             <div class="row image_row">
+             <div class="row image_row mx-0">
               <%if @dog%>
 
                <div class="col-5 user-image"  style="background-image: url(  <%=url_for(@dog.image) if @dog.image.attached? %>)">
@@ -32,10 +32,10 @@
                  <% end %>
                 <br>
                 <%= link_to new_dog_path do %>
-                <button type="button" class="w3-button w3-round w3-blue mt-4 hvr-shrink">Add Dog</button>
+                <button type="button" class="w3-button w3-round w3-blue w3-small mt-4 hvr-shrink">Add Dog</button>
                 <% end %>
                   <%= link_to edit_user_path(@user.id) do %>
-                  <button type="button" class="w3-button w3-round w3-blue mt-4 hvr-shrink">Edit Profile</button>
+                  <button type="button" class="w3-button w3-round w3-blue w3-small mt-4 hvr-shrink">Edit Profile</button>
                   <% end %>
                </div>
              </div>
@@ -43,7 +43,7 @@
            </div>
 
        <div class="col-4">
-         <div class="box dashboard_top_box">
+         <div class="box">
            <div class="col-12 stats-top text-center p-1">
                <h2>Request A Walk</h2>
            </div>
@@ -61,7 +61,7 @@
 
 
          <div class="col-4">
-           <div class="box dashboard_top_box">
+           <div class="box">
              <div class="col-12 stats-top text-center p-1">
                  <h2>Available Credit</h2>
              </div>
