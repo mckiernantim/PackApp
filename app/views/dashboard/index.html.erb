@@ -101,7 +101,6 @@
           </thead>
             <% if @dog %>
 
-              <h5 class="w3-center">Your dog's upcoming walks</h5>
               <% @user.walk_requests.where('date>=?', Date.today).each do |walk| %>
 
 
@@ -188,9 +187,9 @@
                                 <%break%>
                           <%end%>
                     <%end%>
-                
+
                     <%if @is_restricted == false %>
-                   
+
                       <tr>
                         <td> <%=walk.date%> </td>
                         <td> <%=walk.dog.name%> </td>
@@ -204,7 +203,7 @@
 
                      </tr>
                 <%end%>
-            <%end%> 
+            <%end%>
 
 
           </thead>
