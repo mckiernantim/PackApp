@@ -14,7 +14,7 @@
                <% else %>
                  <div class="col-5 user-image" style="background-image: url(https://s3.amazonaws.com/images.wealthyaffiliate.com/uploads/1301462/sitecontent/af8ee5123f4ea46c22cce4787400eeb11523982238_cropped.jpg?1523982247)">
                  </div>
-               <%end%>
+               <% end %>
                <div class="col-7 p-3">
                  <span class="fs-subtitle">Name: <%= @user.first_name + ' ' + @user.last_name %>
                   </span><br>
@@ -27,11 +27,11 @@
                     <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
                  <% end %>
                 <br>
-                 <%= link_to new_dog_path do %>
-                 <button type="button" name="button" class="btn btn-dark">Add Dog</button>
-                 <% end %>
+                <div>
+                  <%= link_to 'Add A Dog', new_dog_path, :class => "hvr-shrink w3-green w3-btn w3-round w3-small" %>
+                </div>
                  <%= link_to edit_user_path(@user.id) do %>
-                 <button type="button" name="button" class="btn btn-dark">Edit</button>
+                 <button type="button" name="button" class="hvr-shrink w3-green w3-btn w3-round w3-small">Edit Profile</button>
                  <% end %>
                </div>
              </div>
