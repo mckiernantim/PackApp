@@ -12,6 +12,8 @@
       post '/confirm_walk_request', to: 'walk_confirmation#confirm_walk'
       post '/mark_complete', to: 'walk_requests#complete_walk_request'
       post '/cancel', to: 'walk_requests#cancel'
+      get '/view/', to: 'walk_requests#view', as: :view
+      
     end
 
   end
@@ -30,6 +32,8 @@ resources :users
   get '/join', to: 'join#index'
 
   get '/confirm', to: 'walk_confirmation#index'
+  
+  
 
 
   get '/confirm/:id', to: 'walk_requests#update'
