@@ -4,7 +4,11 @@
        <div class="row p-3">
 
          <div class="col-4">
-           <div class="col-12 box dashboard_top_box">
+            <div class="box dashboard_top_box">
+                <div class="col-12 stats-top text-center p-1">
+                   <h2><%= @user_name %>'s Profile</h2>
+                </div>
+
              <div class="row image_row">
               <%if @dog%>
 
@@ -27,48 +31,47 @@
                     <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
                  <% end %>
                 <br>
-                 <%= link_to new_dog_path do %>
-                 <button type="button" name="button" class="btn btn-dark">Add Dog</button>
-                 <% end %>
-                 <%= link_to edit_user_path(@user.id) do %>
-                 <button type="button" name="button" class="btn btn-dark">Edit</button>
-                 <% end %>
+                <%= link_to new_dog_path do %>
+                <button type="button" class="w3-button w3-round w3-blue mt-4 hvr-shrink">Add Dog</button>
+                <% end %>
+                  <%= link_to edit_user_path(@user.id) do %>
+                  <button type="button" class="w3-button w3-round w3-blue mt-4 hvr-shrink">Edit Profile</button>
+                  <% end %>
                </div>
              </div>
              </div>
            </div>
 
-
-        <div class="col-4">
-          <div class="col-12">
-            <div class="d-flex justify-content-center">
-              <h2>Request A Walk</h2>
-            </div>
-            <div class="walk-request-button hvr-shrink d-flex justify-content-center w3-margin-top">
-            <% if @dog.nil? %>
-                <%= link_to new_dog_path do %>
-                  <%= image_tag("walk-request-button-2.png") %>
-                 <% end %>
-            <% else %>
+       <div class="col-4">
+         <div class="box dashboard_top_box">
+           <div class="col-12 stats-top text-center p-1">
+               <h2>Request A Walk</h2>
+           </div>
+           <div class="col-12 stats-bottom text-center">
+             <div class="p-3">
+                <h4>Request a walk for <%= @dog.name %> with a member of your Pack.</h4>
                 <%= link_to new_walk_request_path do %>
-                 <%= image_tag("walk-request-button-2.png") %>
+                <button type="button" class="w3-button w3-round w3-yellow mt-5 hvr-shrink">Request A Walk</button>
                 <% end %>
-             <% end %>
-
-            </div>
+             </div>
+           </div>
           </div>
-         </div>
+        </div>
+
 
 
          <div class="col-4">
            <div class="box dashboard_top_box">
              <div class="col-12 stats-top text-center p-1">
-                 <h2>Your Walk Credits</h2>
+                 <h2>Available Credit</h2>
              </div>
              <div class="col-12 stats-bottom text-center">
-                  <h1><%= @user_credit %></h1>
+               <div class="p-3">
+                  <h4><%= @dog.name %> has <%= @user_credit %> walks available.</h4>
+                  <p>Book and complete a walk to earn credit.</p>
+                  <button type="button" class="w3-button w3-round w3-green mt-3 hvr-shrink walk-toggle">Book A Walk</button>
+                </div>
              </div>
-
            </div>
          </div>
 
@@ -81,12 +84,12 @@
   <div class="w3-container">
     <div class="m12 mt-5" style="border-bottom: 3px solid black">
        <span class="walk-toggle active p-3 m-2">Your Walks   </span>
-       <span class="walk-toggle p-3 m-2">    Walk Someone's Dog</span>
+       <span class="walk-toggle p-3 m-2">    Book A Walk</span>
      </div>
 
     <div class="w3-row">
       <div class="w3-col m5 walk-req">
-        <h2 class="w3-center">Walk Requests</h2>
+        <h2 class="w3-center mt-4"><%= @dog.name %>'s Upcoming Walks</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
             <tr class="table-header">
@@ -97,7 +100,6 @@
             </tr>
           </thead>
             <% if @dog %>
-              <h5 class="w3-center">Your dog's upcoming walks</h5>
               <% @user.walk_requests.each do |walk| %>
 
               <tr>
@@ -122,8 +124,7 @@
         <p> </p>
       </div>
       <div class="w3-col m6 walk-req">
-        <h2 class="w3-center">Walks You're Taking</h2>
-          <h5 class="w3-center">Don't forget to hit "complete" to earn credit for your walk</h5>
+        <h2 class="w3-center mt-4"><%= @user_name %>'s Upcoming Walks</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
             <tr class="upcoming-walks-header">
@@ -138,7 +139,7 @@
           </thead>
             <% if @user_walks %>
               <% @user_walks.order(:date).each do |walk| %>
-                
+
                 <tr>
                   <td><%= walk.date.strftime("%b %e") %></td>
                   <td><%= walk.dog.name %></td>
@@ -153,19 +154,18 @@
 
                 </tr>
                  <% end %>
-                 
+
                  <% puts "caught a duplicate" %>
               <% end %>
             <% else %>
               <h5 class="w3-center">Book a walk</h5>
           <% end %>
-         
+
           </tr>
         </table>
       </div>
       <div class="w3-col m12 hide book-walk-box">
-        <h2 class="w3-center">Book A Walk</h2>
-        <h5 class="w3-center">Make a dog's day--and earn walk credit!</h5>
+        <h2 class="w3-center mt-1">Book A Walk</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
             <tr class="table-header">
@@ -174,7 +174,7 @@
               <th>Location</th>
               <th>Start Time</th>
               <th>Book</th>
-            </tr> 
+            </tr>
             <!--CHECKS TO FILTER OUT AVAILABLE WALKS IF YOU'RE ALREADY SCHEDULED AT THAT TIME  -->
               <%@available_walks.each do |walk|%>
                  <% @restricted_times.each do |time| %>
@@ -182,7 +182,7 @@
                         <!--IF THE WALK TIME IS EQUAL TO A WALK TIME OF THE USER RESTRICTED BECOMES TRUE AND NOTHING IS RENDERED -->
                           <% if walk.walk_start_time == time.walk_start_time%>
                               <% @is_restricted = true%>
-                                
+
                                 <%break%>
                           <%end%>
                     <%end%>
@@ -200,7 +200,7 @@
                         </td>
                     </tr>
                     <%end%>
-            <%end%> 
+            <%end%>
 
           </thead>
         </table>
