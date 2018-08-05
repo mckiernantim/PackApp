@@ -26,16 +26,16 @@
                  <span class="fs-subtitle">Address: <%= @user.address_line_one + ' ' + @user.postal_code %> </span><br>
 
                 <% if @dog.nil? %>
-                    <span class="fs-subtitle"> Please Add Your Dog </span><br>
+                    <span class="fs-subtitle"> Please Add Your Dog's Photo </span><br>
                  <% else %>
-                    <span class="fs-subtitle">Dog: <%= @dog.name %> </span><br>
+                    <span class="fs-subtitle">Dog's Name: <%= @dog.name %> </span><br>
                  <% end %>
                 <br>
                 <%= link_to new_dog_path do %>
-                <button type="button" class="w3-button w3-round w3-blue w3-small mt-4 hvr-shrink">Add Dog</button>
+                <button type="button" class="w3-button w3-round w3-indigo w3-medium mb-2 w3-hover-green dashboard-button">Add A Dog</button>
                 <% end %>
                   <%= link_to edit_user_path(@user.id) do %>
-                  <button type="button" class="w3-button w3-round w3-blue w3-small mt-4 hvr-shrink">Edit Profile</button>
+                  <button type="button" class="w3-button w3-round w3-indigo w3-medium mb-2 w3-hover-green dashboard-button">Edit Profile</button>
                   <% end %>
                </div>
              </div>
@@ -49,10 +49,15 @@
            </div>
            <div class="col-12 stats-bottom text-center">
              <div class="p-3">
-                <h4>Request a walk for <%= @dog.name %> with a member of your Pack.</h4>
+               <% if @dog.nil? %>
+                <h4>Please add a dog to your profile to begin requesting walks.</h4>
+               <% else %>
+                <h4>Request a walk for <%= @dog.name %>.</h4>
+                <p class="fs-subtitle"><%= @dog.name %> will walk with a fellow member of your Pack.</p>
                 <%= link_to new_walk_request_path do %>
-                <button type="button" class="w3-button w3-round w3-yellow mt-5 hvr-shrink">Request A Walk</button>
-                <% end %>
+                <button type="button" class="w3-button w3-round w3-indigo w3-medium mt-1 mb-2 w3-hover-green dashboard-button">Request A Walk</button>
+              <% end %>
+              <% end %>
              </div>
            </div>
           </div>
@@ -67,9 +72,13 @@
              </div>
              <div class="col-12 stats-bottom text-center">
                <div class="p-3">
+                <% if @dog.nil? %>
+                    <h4>Please add a dog to your profile to begin earning walk credit.</h4>
+                <% else %>
                   <h4><%= @dog.name %> has <%= @user_credit %> walks available.</h4>
-                  <p>Book and complete a walk to earn credit.</p>
-                  <button type="button" class="w3-button w3-round w3-green mt-3 hvr-shrink walk-toggle">Book A Walk</button>
+                  <p class="fs-subtitle">Book and complete a walk to earn credit.</p>
+                  <button type="button" class="w3-button w3-round w3-indigo mt-1 mb-2 walk-toggle w3-hover-green dashboard-button">Book A Walk</button>
+                <% end %>
                 </div>
              </div>
            </div>
@@ -82,14 +91,19 @@
 
 
   <div class="w3-container">
-    <div class="m12 mt-5" style="border-bottom: 3px solid black">
+    <div class="m12 mt-2" style="border-bottom: 6px solid">
+        <span class="walk-toggle p-3 m-2">Current View   </span>
        <span class="walk-toggle active p-3 m-2">Your Walks   </span>
        <span class="walk-toggle p-3 m-2">    Book A Walk</span>
      </div>
 
     <div class="w3-row">
       <div class="w3-col m5 walk-req">
-        <h2 class="w3-center mt-4"><%= @dog.name %>'s Upcoming Walks</h2>
+            <% if @dog.nil? %>
+              <h4>Your Walk Requests Will Be Listed Here</h4>
+            <% else %>
+              <h2 class="w3-center mt-4 dashboard-title"><%= @dog.name %>'s Upcoming Walks</h2>
+            <% end %>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
             <tr class="table-header">
@@ -126,7 +140,7 @@
         <p> </p>
       </div>
       <div class="w3-col m6 walk-req">
-        <h2 class="w3-center mt-4"><%= @user_name %>'s Upcoming Walks</h2>
+        <h2 class="w3-center mt-4 dashboard-title"><%= @user_name %>'s Upcoming Walks</h2>
         <table class="w3-table w3-small w3-striped w3-hoverable w3-bordered w3-responsive w3-card">
           <thead>
             <tr class="upcoming-walks-header">

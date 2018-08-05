@@ -1,13 +1,13 @@
 <header class="bg-primary" id="first">
   <div class="header-content ">
     <div class="inner">
-      <h1 class="cursive">Pack!</h1>
-      <h4>Dog Walking Cooperative</h4>
-      <hr>
+      <h1>Pack!</h1>
+      <h2>A Dog Walking Cooperative</h2>
+      <br> </br>
         <div class="form-group">
           <%= form_tag(pre_dashboard_path, method: "get") do %>
             <%= text_field_tag(:postal_code_input, nil, placeholder: "Enter Your Zipcode", class: 'p-2 m-1') %>
-            <%= submit_tag("Find Your Pack", :class=>"btn btn-dark m-2 p-2")%>
+            <%= submit_tag("Find Your Pack", :class=>"btn btn-dark m-2 p-3")%>
           <% end %>
         </div>
     </div>
@@ -19,13 +19,10 @@
       <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 text-center box p-4">
         <h2 class="margin-top-0 text-blue">About Us</h2>
         <p class="text-dark">
-          Are you tired of paying for dog walking? <br> So are we! Let's walk each other's dogs for <span class="text-blue cursive" style="font-size: 20px"> free! </span>
-          <br> <br>
-          We are a
-          <span style="font-size: 24px" class="text-blue cursive" > Dog Walking Cooperative. </span>
-          <br> We unite dog owners so that dog walking can be free.
+          Dog walkers are charging exorbitant fees to walk our furry friends.
+          To ameliorate the expense, we decided to form Pack, a members-only organization where dog owners can earn free walks!
         </p>
-        <a href="#two" class="btn btn-primary btn-xl page-scroll">Learn More</a>
+        <a href="#two" class="btn btn-dark m-2 p-3">Learn More</a>
       </div>
     </div>
   </div>
@@ -34,7 +31,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="margin-top-0 text-blue">How it Works!</h2>
+        <h1 class="margin-top-0 text-blue">How it Works </h1>
         <hr class="primary">
       </div>
     </div>
@@ -52,14 +49,14 @@
         <div class="feature box p-3">
           <i class="icon-lg fas fa-clock wow fadeInUp m-3" data-wow-delay=".3s"></i>
           <h3>Walk A Dog</h3>
-          <p class="text-dark">Walk your neighbors dog to accumulate credits to get free dog walks.</p>
+          <p class="text-dark">Walk your neighbor's dog to earn credit for free walks for your pup.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-4 text-center">
         <div class="feature box p-3">
           <i class="icon-lg fas fa-smile wow fadeIn m-3" data-wow-delay=".5s"></i>
           <h3>Never Pay for A Walk!</h3>
-          <p class="text-dark">Enjoy free walks as long as you contribute to your Pack!</p>
+          <p class="text-dark">Enjoy free walks as long as you contribute walks to your Pack!</p>
         </div>
       </div>
     </div>

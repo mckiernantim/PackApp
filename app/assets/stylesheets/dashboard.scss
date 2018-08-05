@@ -22,9 +22,15 @@
   // height: 100%;
 }
 
+.dashboard-title {
+  color: #253c78;
+}
+
+.dashboard-button {
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
 .user-image {
-  // height: 200px;
-  // width: 200px;
   background-size: cover;
   background-repeat: no-repeat;
 }

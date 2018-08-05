@@ -4,10 +4,10 @@
     <div class="col-6 text-center">
        <%= image_tag image_path('logo.jpg'), :class => 'logo-md' %>
        <div class="m-3 mb-5">
-        Request a walk from you're *YOUR* neighbors!
+        Request a walk from your neighbors!
         <br>
         <br>
-        Remember, you must walk other's dogs to earn credit for your walks
+        Remember, you must walk other people's dogs to earn credit for your own dog's walks
        </div>
     </div>
 
@@ -23,13 +23,13 @@
            <%= w.label :date %>
           <%= w.date_field :date %>
          </div>
-       
-         
+
+
          <%=w.hidden_field :dog_id, :value => current_user.dogs[0].id%>
 
 
          <div class="actions">
-           <%= w.submit "Request a Walk", :class => "action-button"%>
+           <%= w.submit "Request Walk", :class => "action-button p-3"%>
          </div>
        <% end %>
      </fieldset>
