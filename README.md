@@ -1,24 +1,22 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Collaborative Ruby on Rails App
 
-Things you may want to cover:
+Dog Walking Co-op
 
-* Ruby version
+3 person team over the span of 4 days & sprints.
 
-* System dependencies
+### Features include:    
+Sign up and see what walks are available in your area. Walk a dog and earn credit for your dogs to be walked.
 
-* Configuration
+#### Environment:  
+Ruby on Rails  
+postgreSQL
+jQuery  
+Wow.js for animations  
+Sass  
+BootStrap   
+Google Maps API/Geocoder    
+Image upload to AWS
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run locally run rake dummy:all to populate an entire DB
