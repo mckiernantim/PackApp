@@ -1,7 +1,7 @@
 
 # Collaborative Ruby on Rails App
 ![alt text](https://github.com/mckiernantim/PackApp/blob/master/pack_app.png)
-![alt text](https://github.com/mckiernantim/PackApp/blob/master/user_pack.png)	
+
 
 Dog Walking Co-op
 
@@ -19,6 +19,7 @@ Sass
 BootStrap   
 Google Maps API/Geocoder    
 Image upload to AWS
+![alt text](https://github.com/mckiernantim/PackApp/blob/master/user_pack.png)	
 
 
 To run locally run rake dummy:all to populate an entire DB
