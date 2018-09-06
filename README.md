@@ -1,7 +1,8 @@
 # Pack!  A Dog Walking Co-Op App
-![alt text](https://github.com/mckiernantim/PackApp/blob/master/pack_app.png)
+
   
 Pack is a Dog Walking Co-op application built over a period of four sprtins with a team of three developers for NYCDA's "Start-Up Crunch" for the 2018 April Softare Engineering Intensive. 
+![alt text](https://github.com/mckiernantim/PackApp/blob/master/pack_app.png)
 
 ### Features include:    
 Secure User Authentiaction
