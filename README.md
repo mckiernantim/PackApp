@@ -1,7 +1,7 @@
 
 # Collaborative Ruby on Rails App
 ![alt text](https://github.com/mckiernantim/PackApp/blob/master/pack_app.png)
- ![alt text](https://github.com/S-MORA/PackApp/blob/master/user_pack.png)	
+![alt text](https://github.com/mckiernantim/PackApp/blob/master/user_pack.png)	
 
 Dog Walking Co-op
 
