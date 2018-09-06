@@ -1,14 +1,13 @@
-
-# Collaborative Ruby on Rails App
+# Pack!  A Dog Walking Co-Op App
 ![alt text](https://github.com/mckiernantim/PackApp/blob/master/pack_app.png)
-
-
-Dog Walking Co-op
-
-3 person team over the span of 4 days & sprints.
+  
+Pack is a Dog Walking Co-op application built over a period of four sprtins with a team of three developers for NYCDA's "Start-Up Crunch" for the 2018 April Softare Engineering Intensive. 
 
 ### Features include:    
-Sign up and see what walks are available in your area. Walk a dog and earn credit for your dogs to be walked.
+Secure User Authentiaction
+Google Maps (Geocoder) API for Uer Location
+User Image Storage With Activer Record and AWS
+
 
 #### Environment:  
 Ruby on Rails  
